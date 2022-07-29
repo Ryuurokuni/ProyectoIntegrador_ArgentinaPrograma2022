@@ -1,0 +1,11 @@
+div{
+  display: flex;
+  align-items: center;
+  justify-content:space-between;
+  background-color: pink;
+}
+
+redsoc-icons{
+  float: right;
+  margin-top: 25px;
+}
