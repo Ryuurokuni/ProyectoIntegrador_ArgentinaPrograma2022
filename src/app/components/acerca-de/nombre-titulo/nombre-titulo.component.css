@@ -1,0 +1,13 @@
+#contenedor-nombre-titulo{
+  background-color: #fcf7de;
+}
+
+#nombre{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+p{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}

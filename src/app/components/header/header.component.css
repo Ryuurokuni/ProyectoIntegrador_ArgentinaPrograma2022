@@ -1,7 +1,14 @@
-div{
+/* div{
   display: flex;
   align-items: center;
   justify-content:space-between;
+  
+} */
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: pink;
 }
 
@@ -9,3 +16,8 @@ redsoc-icons{
   float: right;
   margin-top: 25px;
 }
+
+/* @media (max-width: 575px){
+  TRATAR DE ACOMODAR EL HEADER
+  }
+*/

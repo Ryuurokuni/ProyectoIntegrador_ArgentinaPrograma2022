@@ -1,3 +1,20 @@
-img{
-  width: 100%;
+#banner{
+/*   width: 100%; */
+  position:relative;
+}
+
+#foto-div{
+  max-width: 30%;
+  position: absolute;
+  bottom: -25%;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+
+#foto-div img{
+  border-radius: 50%;
+}
+
+.banner-component{
+  margin-bottom: 15%;
 }

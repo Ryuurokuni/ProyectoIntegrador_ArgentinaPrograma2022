@@ -8,6 +8,14 @@ import { LogoArgprogComponent } from './components/header/logo-argprog/logo-argp
 import { RedsocIconsComponent } from './components/header/redsoc-icons/redsoc-icons.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
+import { NombreTituloComponent } from './components/acerca-de/nombre-titulo/nombre-titulo.component';
+import { ExperienciaComponent } from './components/experiencia/experiencia.component';
+import { EducacionComponent } from './components/educacion/educacion.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ProyectosRealizadosComponent } from './components/proyectos-realizados/proyectos-realizados.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +23,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     LogoArgprogComponent,
     RedsocIconsComponent,
-    BannerComponent
+    BannerComponent,
+    AcercaDeComponent,
+    NombreTituloComponent,
+    ExperienciaComponent,
+    EducacionComponent,
+    SkillsComponent,
+    ProyectosRealizadosComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    NgCircleProgressModule.forRoot({})
   ],
   providers: [],
   bootstrap: [AppComponent]
