@@ -25,7 +25,4 @@ public class Persona {
     @NotNull
     private String apellido;
     
-    // private String img;
-    
-    
 }

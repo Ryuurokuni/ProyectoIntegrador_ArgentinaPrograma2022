@@ -8,7 +8,7 @@ import { PersonaService } from 'src/app/service/persona.service';
   styleUrls: ['./nombre-titulo.component.css']
 })
 export class NombreTituloComponent implements OnInit {
-  // Cuando cambia la variable persona, se va a cambiar en data, el subscribe detecta el data y se lo transmite al service, el cual va a hablar con el service del backend
+  // Cuando cambia la variable persona, se va a cambiar en data, el subscribe detecta el data y se lo transmite al service, el cual va a hablar con el service
   persona: persona = new persona("Pablo","Rodriguez");
 
   constructor(public personaService: PersonaService) { }

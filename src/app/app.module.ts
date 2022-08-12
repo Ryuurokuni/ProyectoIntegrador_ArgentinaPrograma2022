@@ -17,6 +17,9 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectosRealizadosComponent } from './components/proyectos-realizados/proyectos-realizados.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { AuthModule } from '@auth0/auth0-angular';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthHttpInterceptor } from '@auth0/auth0-angular';
 
 @NgModule({
   declarations: [
@@ -38,9 +41,22 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     NgbModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    AuthModule.forRoot({
+      domain: 'dev-flp23ydd.us.auth0.com',
+      clientId: 'vurLFTi8semJ8bIAgbkakltVtCInjmRv',
+      redirectUri: window.location.origin,
+      httpInterceptor: {
+        allowedList: [
+          // Attach access tokens to any calls that start with '/api/'
+          '/api/*',
+        ]
+
+    }})
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
