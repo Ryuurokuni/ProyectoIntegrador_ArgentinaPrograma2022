@@ -1,7 +1,6 @@
 package com.portfolio.Proyecto_Integrador.controller;
 
 import com.portfolio.Proyecto_Integrador.entity.Persona;
-import com.portfolio.Proyecto_Integrador.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,6 +12,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import com.portfolio.Proyecto_Integrador.service.PersonaService;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 
 
@@ -20,25 +21,28 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = {"http://localhost:8080", "http://localhost:4200"})
 public class PersonaController {
     
-    @Autowired IPersonaService iPersonaService;
+    @Autowired PersonaService iPersonaService;
     
     @GetMapping("/personas/traer")
     public List<Persona> traerPersona(){
         return iPersonaService.traerPersona();
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/personas/crear")
     public String crearPersona(@RequestBody Persona persona){
         iPersonaService.crearPersona(persona);
         return "La persona fue creada exitosamente!";
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/personas/borrar/{id}")
     public String borrarPersona(@PathVariable Long id){
         iPersonaService.borrarPersona(id);
         return "La persona fue eliminada exitosamente!";
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/personas/editar/{id}")
     public Persona editarPersona(@PathVariable Long id,
                                  @RequestParam("nombre") String newNombre,
