@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,9 +17,12 @@ import { SkillsComponent } from './components/skills/skills.component';
 import { ProyectosRealizadosComponent } from './components/proyectos-realizados/proyectos-realizados.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-// import { AuthModule } from '@auth0/auth0-angular';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-// import { AuthHttpInterceptor } from '@auth0/auth0-angular';
+import { ModalLoginComponent } from './components/modal-login/modal-login.component';
+import { interceptorProvider } from './service/interceptor-service';
+import { ExperienciaCrearComponent } from './components/experiencia/experiencia-crear/experiencia-crear.component';
+import { ExperienciaEditarComponent } from './components/experiencia/experiencia-editar/experiencia-editar.component';
+import { EducacionCrearComponent } from './components/educacion/educacion-crear/educacion-crear.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     EducacionComponent,
     SkillsComponent,
     ProyectosRealizadosComponent,
-    FooterComponent
+    FooterComponent,
+    ModalLoginComponent,
+    ExperienciaCrearComponent,
+    ExperienciaEditarComponent,
+    EducacionCrearComponent
   ],
   imports: [
     BrowserModule,
@@ -42,20 +49,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     NgbModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
-    /* AuthModule.forRoot({
-      domain: 'dev-flp23ydd.us.auth0.com',
-      clientId: 'vurLFTi8semJ8bIAgbkakltVtCInjmRv',
-      redirectUri: window.location.origin,
-      httpInterceptor: {
-        allowedList: [
-          // Attach access tokens to any calls that start with '/api/'
-          '/api/*',
-        ]
-
-    }}) */
+    FormsModule
+    
   ],
   providers: [
-    // { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true }
+    interceptorProvider
   ],
   bootstrap: [AppComponent]
 })

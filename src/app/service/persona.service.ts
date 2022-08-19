@@ -12,6 +12,6 @@ export class PersonaService {
   constructor(private http: HttpClient) { }
 
   public traerPersona(): Observable<persona>{ //'Observable' se encarga de las peticiones asincronicas
-    return this.http.get<persona>(this.url+'traer');
+    return this.http.get<persona>(this.url+'traer/perfil');
   }
 }

@@ -1,26 +1,21 @@
 <div class="row">
   <h2>Experiencia laboral</h2>
+  <div class="col-lg-2">
+    <app-experiencia-crear *ngIf="isLogged"></app-experiencia-crear>
+  </div>
+  <div class="col-lg-10"></div>
   <div class="col-lg-1"></div>
   <div class="col-lg-11">
-    <ul>
-      <li>
-        <h3>Primer Trabajo</h3> - <h4>Año</h4>
-      </li>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatum, sunt doloremque perferendis nam expedita explicabo laboriosam amet voluptatem veniam, dicta beatae. Itaque praesentium iste impedit necessitatibus optio recusandae.</p>
-    </ul>
-    <ul>
-      <li>
-        <h3>Segundo Trabajo</h3> - <h4>Año</h4>
-      </li>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatum, sunt doloremque perferendis nam expedita explicabo laboriosam amet voluptatem veniam, dicta beatae. Itaque praesentium iste impedit necessitatibus optio recusandae.</p>
-    </ul>
-    <ul>
-      <li>
-        <h3>Tercer Trabajo</h3> - <h4>Año</h4>
-      </li>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatum, sunt doloremque perferendis nam expedita explicabo laboriosam amet voluptatem veniam, dicta beatae. Itaque praesentium iste impedit necessitatibus optio recusandae.</p>
-    </ul>
-  </div>
-
+  <table class="table">
+    <tbody>
+      <tr *ngFor="let ExperienciaLaboral of exp">
+        <td><h3>{{ExperienciaLaboral.nombreExp}}</h3></td>
+        <td>{{ExperienciaLaboral.descripcionExp}}</td>
+        <td *ngIf="isLogged"><app-experiencia-editar></app-experiencia-editar></td>
+        <td *ngIf="isLogged"><button type="button" class="btn btn-danger" (click)="delete(ExperienciaLaboral.id)"><i class="bi bi-trash-fill"></i> ELIMINAR</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 </div>

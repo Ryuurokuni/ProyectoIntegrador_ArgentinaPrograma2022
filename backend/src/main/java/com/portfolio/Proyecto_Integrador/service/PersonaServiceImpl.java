@@ -32,7 +32,5 @@ public class PersonaServiceImpl implements PersonaService{
     public void borrarPersona(Long id) {
         iPersonaRepository.deleteById(id);
     }
-
-    
     
 }

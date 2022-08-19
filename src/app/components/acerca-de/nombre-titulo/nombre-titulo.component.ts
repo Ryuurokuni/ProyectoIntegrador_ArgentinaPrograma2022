@@ -9,7 +9,7 @@ import { PersonaService } from 'src/app/service/persona.service';
 })
 export class NombreTituloComponent implements OnInit {
   // Cuando cambia la variable persona, se va a cambiar en data, el subscribe detecta el data y se lo transmite al service, el cual va a hablar con el service
-  persona: persona = new persona("Pablo","Rodriguez");
+  persona: persona = new persona("","");
 
   constructor(public personaService: PersonaService) { }
 

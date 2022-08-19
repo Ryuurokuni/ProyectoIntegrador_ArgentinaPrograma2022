@@ -8,5 +8,5 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrls: ['./redsoc-icons.component.css']
 })
 export class RedsocIconsComponent {
-
+  
 }

@@ -1,10 +1,14 @@
 .row{
   padding: 2rem;
-  text-align: end;
+  
 }
 
 div{
   background-color: #fdeade;
+}
+
+h2{
+  text-align: end;
 }
 
 h3,h4{

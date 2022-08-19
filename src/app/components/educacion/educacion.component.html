@@ -1,26 +1,21 @@
 <div class="row">
-  <h2>Educacion</h2>
-  <div class="col-lg-11">
-  <div class="col-lg-1"></div>
-    <ul>
-      <li>
-        <h3>Primer Educacion</h3> - <h4>Año</h4>
-      </li>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatum, sunt doloremque perferendis nam expedita explicabo laboriosam amet voluptatem veniam, dicta beatae. Itaque praesentium iste impedit necessitatibus optio recusandae.</p>
-    </ul>
-    <ul>
-      <li>
-        <h3>Segunda Educacion</h3> - <h4>Año</h4>
-      </li>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatum, sunt doloremque perferendis nam expedita explicabo laboriosam amet voluptatem veniam, dicta beatae. Itaque praesentium iste impedit necessitatibus optio recusandae.</p>
-    </ul>
-    <ul>
-      <li>
-        <h3>Tercer Educacion</h3> - <h4>Año</h4>
-      </li>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque eos voluptatum, sunt doloremque perferendis nam expedita explicabo laboriosam amet voluptatem veniam, dicta beatae. Itaque praesentium iste impedit necessitatibus optio recusandae.</p>
-    </ul>
+  <h2>Educación</h2>
+  <div class="col-lg-10"></div>
+  <div class="col-lg-2">
+    <app-educacion-crear *ngIf="isLogged"></app-educacion-crear>
   </div>
-
+  <div class="col-lg-11">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let Educacion of edu">
+          <td><h3>{{Educacion.nombreEdu}}</h3></td>
+          <td>{{Educacion.descripcionEdu}}</td>
+          <td *ngIf="isLogged"><button type="button" class="btn btn-outline-dark"><i class="bi bi-pencil-fill"></i>EDITAR WIP</button></td>
+          <td *ngIf="isLogged"><button type="button" class="btn btn-danger" (click)="delete(Educacion.id)"><i class="bi bi-trash-fill"></i> ELIMINAR</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-lg-1"></div>
 
 </div>

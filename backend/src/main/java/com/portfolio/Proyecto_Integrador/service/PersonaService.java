@@ -18,5 +18,4 @@ public interface PersonaService {
     public void borrarPersona(Long id);
     
     
-    
 }

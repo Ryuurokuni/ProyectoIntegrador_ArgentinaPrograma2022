@@ -1,0 +1,28 @@
+<ng-template #contenido let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Nueva Experiencia Laboral</h4>
+    <button class="btn-close" aria-label="close" type="button" (click)="modal.dismiss()">
+    </button>
+  </div>
+  <div class="modal-body">
+      <div>
+          <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+              <div class="form-group">
+                  <label for="nombreExp">Nombre de la empresa</label>
+                  <input type="text" class="form-control form-control-lg" id="nombreExp" name="nombreExp" [(ngModel)]="nombreExp" required>
+              </div>
+              <div class="form-group">
+                  <label for="descripcionExp">Descripcion de la tarea</label>
+                  <input type="text" class="form-control form-control-lg" id="descripcionExp" name="descripcionExp" [(ngModel)]="descripcionExp" required>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Agregar</button>
+            
+            </div>
+          </form>
+      </div>
+  </div>
+</ng-template>
+
+<button type="button" class="btn btn-outline-dark" (click)="openLG(contenido)">Nueva Experiencia Laboral</button>
