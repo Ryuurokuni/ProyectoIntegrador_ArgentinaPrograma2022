@@ -1,5 +1,6 @@
 <div class="row">
   <h2 id="titulo">Skills</h2>
+  <app-skills-crear *ngIf="isLogged"></app-skills-crear>
   <div class="text-center col-sm-4 col-md-4 col-lg-4"><circle-progress
     [title]="'Ingles'"
     [showUnits]="false"

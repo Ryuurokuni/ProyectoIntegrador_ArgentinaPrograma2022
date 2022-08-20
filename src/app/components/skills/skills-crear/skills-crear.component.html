@@ -1,0 +1,29 @@
+<ng-template #contenido let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Nueva Skill</h4>
+    <button class="btn-close" aria-label="close" type="button" (click)="modal.dismiss()">
+    </button>
+  </div>
+  <div class="modal-body">
+      <div>
+          <form novalidate #f="ngForm">
+            <div class="col-md-7 col-lg-5 col-xl-5  offset-xl-1">
+              <div class="form-group">
+                  <label for="nombreSkill">Nombre de la Skill</label>
+                  <input type="text" class="form-control form-control-lg" id="nombreSkill" name="nombreSkill" required>
+              </div>
+              <div class="form-group">
+                  <label for="descripcionSkill">Porcentaje de maestría</label>
+                  <input type="text" class="form-control form-control-lg" id="descripcionSkill" name="descripcionSkill" required>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Agregar</button>
+            
+            </div>
+          </form>
+      </div>
+  </div>
+</ng-template>
+
+<button type="button" class="btn btn-outline-dark" (click)="openLG(contenido)">Agregar Skill</button>
+

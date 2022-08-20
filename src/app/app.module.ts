@@ -24,6 +24,9 @@ import { ExperienciaCrearComponent } from './components/experiencia/experiencia-
 import { ExperienciaEditarComponent } from './components/experiencia/experiencia-editar/experiencia-editar.component';
 import { EducacionCrearComponent } from './components/educacion/educacion-crear/educacion-crear.component';
 import { AcercaDeEditComponent } from './components/acerca-de/acerca-de-edit/acerca-de-edit.component';
+import { ProyectosRealizadosCrearComponent } from './components/proyectos-realizados/proyectos-realizados-crear/proyectos-realizados-crear.component';
+import { SkillsCrearComponent } from './components/skills/skills-crear/skills-crear.component';
+import { BannerEditComponent } from './components/banner/banner-edit/banner-edit.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { AcercaDeEditComponent } from './components/acerca-de/acerca-de-edit/ace
     ExperienciaCrearComponent,
     ExperienciaEditarComponent,
     EducacionCrearComponent,
-    AcercaDeEditComponent
+    AcercaDeEditComponent,
+    ProyectosRealizadosCrearComponent,
+    SkillsCrearComponent,
+    BannerEditComponent
   ],
   imports: [
     BrowserModule,
