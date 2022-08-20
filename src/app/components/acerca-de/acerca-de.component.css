@@ -15,3 +15,7 @@ p{
 #contenedor-acerca-de{
   background-color: #f0defd;
 }
+
+#titulo{
+  font-weight: bold;
+}

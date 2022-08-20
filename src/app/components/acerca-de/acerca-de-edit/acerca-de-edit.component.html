@@ -1,0 +1,26 @@
+<ng-template #contenido let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Editar Acerca de Mí</h4>
+    <button class="btn-close" aria-label="close" type="button" (click)="modal.dismiss()">
+    </button>
+  </div>
+  <div class="modal-body">
+      <div>
+          <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+            <div class="col-md-7 col-lg-5 col-xl-5  offset-xl-1">
+              <div class="form-group">
+                  <label for="descripcion">Descripcion</label>
+                  <input type="text" class="form-control form-control-lg" id="descripcion" name="descripcion" [(ngModel)]="acde.descripcion" required>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-primary btn-lg btn-block">Agregar</button>
+            
+            </div>
+          </form>
+      </div>
+  </div>
+</ng-template>
+
+<p class="text-center">{{acde.descripcion}}</p>
+<button type="button" class="btn btn-outline-dark" (click)="openLG(contenido)">Editar</button>
+

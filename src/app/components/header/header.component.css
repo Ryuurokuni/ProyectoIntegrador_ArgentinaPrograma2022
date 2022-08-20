@@ -17,6 +17,10 @@ redsoc-icons{
   margin-top: 25px;
 }
 
+#YP{
+  float: left;
+}
+
 /* @media (max-width: 575px){
   TRATAR DE ACOMODAR EL HEADER
   }

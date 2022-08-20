@@ -1,3 +1,15 @@
 #logoAP{
   height: 100px;
 }
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#YP{
+  font-family: 'Roboto Slab', serif;
+  font-size: xx-large;
+  font-weight: 500;
+}

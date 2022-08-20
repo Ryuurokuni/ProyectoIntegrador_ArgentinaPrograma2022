@@ -9,3 +9,7 @@ div{
 h3,h4{
   display: inline;
 }
+
+#titulo{
+  font-weight: bold;
+}
