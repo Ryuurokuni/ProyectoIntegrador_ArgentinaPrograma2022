@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Educacion } from 'src/app/model/educacion';
+import { AuthService } from 'src/app/service/auth.service';
 import { EducacionService } from 'src/app/service/educacion.service';
 import { TokenService } from 'src/app/service/token.service';
 
@@ -10,39 +11,20 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class EducacionComponent implements OnInit {
 
-  edu: Educacion[] = [];
-
-  constructor(private educacionS: EducacionService, private tokenService: TokenService) { }
-  isLogged = false;
-
-  ngOnInit(): void {
-    this.cargarEducacion();
-    if(this.tokenService.getToken()){
-      this.isLogged = true;
-    } else {
-      this.isLogged = false;
-    }
+  public get items() : Educacion[] {
+    return this.educacionS.items;
+  }
+  public get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
   }
 
-  cargarEducacion(): void{
-    this.educacionS.lista().subscribe(
-      data =>{
-        this.edu = data;
-      }
-    )
+  constructor(private educacionS: EducacionService, private tokenService: TokenService, private authService: AuthService) { }
+
+  ngOnInit(): void {
+    // this.educacionS.fetchData();
   }
 
   delete(id?: number){
-    if( id != undefined){
-      if(window.confirm('Está seguro que quiere eliminar esta entrada?')){
-      this.educacionS.delete(id).subscribe(
-        data => {
-          this.cargarEducacion();
-        }, err => {
-          alert("No se pudo eliminar la entrada...");
-        }
-      )
-    }
-  }
+
   }
 }

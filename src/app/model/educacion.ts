@@ -1,10 +1,7 @@
-export class Educacion {
+export interface Educacion {
   id: number;
   nombreEdu: string;
   descripcionEdu: string;
-
-  constructor(nombreEdu: string, descripcionEdu: string){
-    this.nombreEdu = nombreEdu;
-    this.descripcionEdu = descripcionEdu;
-  }
+  fechaDesde?: Date;
+  fechaHasta?: Date;
 }

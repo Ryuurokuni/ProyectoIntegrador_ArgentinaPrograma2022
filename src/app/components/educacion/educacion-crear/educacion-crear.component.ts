@@ -22,7 +22,13 @@ export class EducacionCrearComponent implements OnInit {
   }
 
   onCreate(): void {
-    const edu = new Educacion(this.nombreEdu, this.descripcionEdu);
+    const edu : Educacion = {
+      id: 0,
+      nombreEdu: this.nombreEdu,
+      descripcionEdu: this.descripcionEdu,
+      fechaDesde: new Date(),
+      fechaHasta: new Date()
+    };
     this.sEducacion.save(edu).subscribe(
       data => {
         alert("Educación añadida exitosamente!");

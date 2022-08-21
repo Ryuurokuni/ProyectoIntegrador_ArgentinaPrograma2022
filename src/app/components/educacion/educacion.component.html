@@ -1,21 +1,17 @@
 <div class="row">
-  <h2 id="titulo">Educación</h2>
+  <h2 id="titulo">Educación
+    <button *ngIf="isLoggedIn" type="button" class="btn btn-outline-dark" ><i class="bi bi-plus"></i></button>
+
+  </h2>
   <div class="col-lg-10"></div>
-  <div class="col-lg-2">
-    <app-educacion-crear *ngIf="isLogged"></app-educacion-crear>
+
+  <div class="">
+    <ul>
+      <li *ngFor="let x of items">
+        <app-educacion-item  [item]="x"></app-educacion-item>
+      </li>
+    </ul>
   </div>
-  <div class="col-lg-11">
-    <table class="table">
-      <tbody>
-        <tr *ngFor="let Educacion of edu">
-          <td><h3>{{Educacion.nombreEdu}}</h3></td>
-          <td>{{Educacion.descripcionEdu}}</td>
-          <td *ngIf="isLogged"><button type="button" class="btn btn-outline-dark"><i class="bi bi-pencil-fill"></i>EDITAR WIP</button></td>
-          <td *ngIf="isLogged"><button type="button" class="btn btn-danger" (click)="delete(Educacion.id)"><i class="bi bi-trash-fill"></i> ELIMINAR</button></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-lg-1"></div>
+
 
 </div>

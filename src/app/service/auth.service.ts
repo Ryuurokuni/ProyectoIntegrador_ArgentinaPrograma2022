@@ -13,6 +13,13 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
+
+  public get isLoggedIn(): boolean {
+    var token = window.sessionStorage.getItem("AuthToken");
+    return (token != null && token != undefined);
+  }
+
+
  public nuevo(nuevoUsuario: NuevoUsuario): Observable<any>{
    return this.httpClient.post<any>(this.authURL + 'nuevo', nuevoUsuario);
  }

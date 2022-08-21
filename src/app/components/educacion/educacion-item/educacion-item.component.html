@@ -1,0 +1,37 @@
+<!-- <tr>
+    <td></td>
+    <td></td>
+    <td>{{item.fechaDesde}}</td>
+    <td>{{item.fechaHasta}}</td>
+    <td >
+       
+    </td>
+</tr> -->
+
+<div class="d-flex bordecito w-100">
+  <small class="p-2">{{ item.fechaDesde }} - {{ item.fechaHasta }}</small>
+  <div class="w-100">
+    <h5 class="mb-1">{{ item.nombreEdu }}</h5>
+    <p class="p-2 mb-1">
+      {{ item.descripcionEdu }}
+    </p>
+  </div>
+  <div *ngIf="isLoggedIn">
+    <div class="d-flex gap-1" *ngIf="!editMode">
+      <button type="button" class="btn btn-outline-dark" (click)="ToggleEdit()">
+        <i class="bi bi-pencil-fill"></i>
+      </button>
+      <button type="button" class="btn btn-danger" (click)="delete()">
+        <i class="bi bi-trash-fill"></i>
+      </button>
+    </div>
+    <div class="d-flex gap-1" *ngIf="editMode">
+      <button type="button" class="btn btn-outline-dark" (click)="ToggleEdit()">
+        <i class="bi bi-save-fill"></i>
+      </button>
+      <button type="button" class="btn btn-danger" (click)="delete()">
+        <i class="bi bi-x-square-fill"></i>
+      </button>
+    </div>
+  </div>
+</div>

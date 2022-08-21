@@ -2,19 +2,30 @@
   padding: 2rem;
   
 }
-
+/* 
 div{
   background-color: #fdeade;
-}
+} */
 
 h2{
-  text-align: end;
+  text-align: start;
 }
 
-h3,h4{
-  display: inline;
-}
+
 
 #titulo{
   font-weight: bold;
+}
+table{
+  width: 100%
+}
+
+:host{
+
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

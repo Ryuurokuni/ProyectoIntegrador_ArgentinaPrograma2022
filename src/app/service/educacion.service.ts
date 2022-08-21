@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+
 import { Observable } from 'rxjs';
 import { Educacion } from '../model/educacion';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,29 @@ export class EducacionService {
 
   url = 'http://localhost:8080/educacion/';
 
-  constructor(private httpClient : HttpClient) { }
-  
+  public items: Educacion[] = [];
+
+  public get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
+  }
+
+  constructor(private httpClient : HttpClient, private authService: AuthService) { 
+   this.fetchData();
+  }
+
+  public fetchData(): void{
+    this.lista().subscribe({
+      next: (lista)=> {
+        this.items = [...lista];
+      },
+      complete: ()=> {
+        console.log(this.items);
+      }
+    })
+  }
+
+ 
+
   public lista(): Observable<Educacion[]>{
     return this.httpClient.get<Educacion[]>(this.url + 'lista');
   }
