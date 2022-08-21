@@ -13,15 +13,11 @@ public class AcercaDeService {
     @Autowired
     AcercaDeRepository repoAcercaDe;
     
-    public Optional<AcercaDe> getById(int id){
-        return repoAcercaDe.findById(id);
+    public Optional<AcercaDe> getAcercaDe(){
+        return repoAcercaDe.findById(1);
     }
     
     public void save(AcercaDe acercaDe){
         repoAcercaDe.save(acercaDe);
-    }
-    
-    public boolean existsById(int id){
-        return repoAcercaDe.existsById(id);
     }
 }

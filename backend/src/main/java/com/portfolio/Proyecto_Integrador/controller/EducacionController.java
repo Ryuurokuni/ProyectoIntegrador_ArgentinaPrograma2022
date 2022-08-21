@@ -5,6 +5,7 @@ import com.portfolio.Proyecto_Integrador.entity.Educacion;
 import com.portfolio.Proyecto_Integrador.security.controller.Mensaje;
 import com.portfolio.Proyecto_Integrador.service.EducacionService;
 import java.util.List;
+import javax.validation.Valid;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -36,7 +37,7 @@ public class EducacionController {
     @GetMapping("/detalle/{id}")
     public ResponseEntity<Educacion> getById(@PathVariable("id")int id){
         if(!servEdu.existsById(id)){
-            return new ResponseEntity(new Mensaje("No existe el id solicitado..."), HttpStatus.BAD_REQUEST);
+            
         }
         
         Educacion educacion = servEdu.getOne(id).get();
@@ -55,7 +56,7 @@ public class EducacionController {
     
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/crear")
-    public ResponseEntity<?> create(@RequestBody dtoEducacion dtoeducacion){
+    public ResponseEntity<?> create(@RequestBody @Valid dtoEducacion dtoeducacion){
         if(StringUtils.isBlank(dtoeducacion.getNombreEdu())){
             return new ResponseEntity(new Mensaje("El campo nombre es obligatorio."), HttpStatus.BAD_REQUEST);
         }
@@ -64,7 +65,10 @@ public class EducacionController {
         }
         
         Educacion educacion = new Educacion(
-                dtoeducacion.getNombreEdu(), dtoeducacion.getDescripcionEdu()
+                dtoeducacion.getNombreEdu(),
+                dtoeducacion.getDescripcionEdu(),
+                dtoeducacion.getFechaDesde(),
+                dtoeducacion.getFechaHasta()
             );
         servEdu.save(educacion);
         return new ResponseEntity(new Mensaje("Educacion creada exitosamente!"), HttpStatus.OK);
@@ -73,7 +77,7 @@ public class EducacionController {
     
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/editar/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoEducacion dtoeducacion){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody @Valid dtoEducacion dtoeducacion){
         if(!servEdu.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el id solicitado..."), HttpStatus.NOT_FOUND);
         }
@@ -88,6 +92,8 @@ public class EducacionController {
         
         educacion.setNombreEdu(dtoeducacion.getNombreEdu());
         educacion.setDescripcionEdu(dtoeducacion.getDescripcionEdu());
+        educacion.setFechaDesde(dtoeducacion.getFechaDesde());
+        educacion.setFechaHasta(dtoeducacion.getFechaHasta());
         
         servEdu.save(educacion);
         

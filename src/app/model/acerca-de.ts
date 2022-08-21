@@ -1,8 +1,6 @@
-export class AcercaDe {
-  id: number;
+export interface AcercaDe {
+  nombre: string;
+  apellido: string;
+  titulo: string;
   descripcion: string;
-
-  constructor(descripcion:string){
-    this.descripcion = descripcion;
-  }
 }

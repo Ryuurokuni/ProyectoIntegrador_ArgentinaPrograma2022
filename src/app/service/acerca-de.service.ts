@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 import { AcercaDe } from '../model/acerca-de';
 
 @Injectable({
@@ -8,15 +8,31 @@ import { AcercaDe } from '../model/acerca-de';
 })
 export class AcercaDeService {
 
-  url = 'http://localhost:8080/acercade/';
-  constructor(private httpClient : HttpClient) { }
-
-  public detail(id: number): Observable<AcercaDe>{
-    return this.httpClient.get<AcercaDe>(this.url + `detalle/1`);
+  private _aboutData: AcercaDe
+  
+  public get aboutData(): AcercaDe {
+    return this._aboutData;
   }
 
-  public update(id: number, descripcion: string): Observable<any>{
-    return this.httpClient.put<any>(this.url + `editar/${id}`, descripcion);
+  url = 'http://localhost:8080/acercade';
+  constructor(private httpClient : HttpClient) { 
+    this.fetchData();
+  }
+
+  public fetchData(){
+    this.detail().subscribe((response) => this._aboutData = response);
+  }
+
+  public detail(): Observable<AcercaDe>{
+    return this.httpClient.get<AcercaDe>(this.url);
+  }
+
+  public update(acercaDe: AcercaDe): Observable<any>{
+
+    return this.httpClient.put<any>(this.url, acercaDe)
+        .pipe(
+          tap((res) => this._aboutData = res)
+        );
   }
 
 }

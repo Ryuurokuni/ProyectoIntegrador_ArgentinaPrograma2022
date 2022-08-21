@@ -54,4 +54,10 @@ export class EducacionService {
   public delete(id: number): Observable<any>{
     return this.httpClient.delete<any>(this.url + `borrar/${id}`);
   }
+  public apendToArray(education: Educacion){
+    this.items = [...this.items, education];
+  }
+  public removeZeroIds(){
+    this.items = this.items.filter(x=> x.id != 0);
+  }
 }

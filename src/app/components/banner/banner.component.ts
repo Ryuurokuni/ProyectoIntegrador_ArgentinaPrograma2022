@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { BannerImages } from 'src/app/model/BannerImages';
+import { BannerService } from 'src/app/service/banner-service.service';
 import { TokenService } from 'src/app/service/token.service';
 
 @Component({
@@ -9,7 +11,10 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class BannerComponent implements OnInit {
 
-  constructor(private tokenService: TokenService) { }
+  readonly bannerUrl = this.service.bannerUrl;
+  readonly profileUrl =this.service.profileUrl;
+
+  constructor(private tokenService: TokenService, private service: BannerService) { }
 
   isLogged = false;
   
@@ -20,7 +25,4 @@ export class BannerComponent implements OnInit {
       this.isLogged = false;
     }
   }
-
-  
-
 }

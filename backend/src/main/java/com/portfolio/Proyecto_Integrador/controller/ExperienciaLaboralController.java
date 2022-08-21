@@ -5,6 +5,7 @@ import com.portfolio.Proyecto_Integrador.entity.ExperienciaLaboral;
 import com.portfolio.Proyecto_Integrador.security.controller.Mensaje;
 import com.portfolio.Proyecto_Integrador.service.ExperienciaLaboralService;
 import java.util.List;
+import javax.validation.Valid;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -53,13 +54,17 @@ public class ExperienciaLaboralController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/crear")
-    public ResponseEntity<?> create(@RequestBody dtoExperienciaLaboral dtoexp){      
+    public ResponseEntity<?> create(@RequestBody @Valid dtoExperienciaLaboral dtoexp){      
         if(StringUtils.isBlank(dtoexp.getNombreExp()))
             return new ResponseEntity(new Mensaje("El campo nombre es obligatorio."), HttpStatus.BAD_REQUEST);
         if(servExp.existsByNombreExp(dtoexp.getNombreExp()))
             return new ResponseEntity(new Mensaje("Ya existe una entrada con ese nombre."), HttpStatus.BAD_REQUEST);
         
-        ExperienciaLaboral experiencia = new ExperienciaLaboral(dtoexp.getNombreExp(), dtoexp.getDescripcionExp());
+        ExperienciaLaboral experiencia = new ExperienciaLaboral(dtoexp.getNombreExp(),
+                dtoexp.getDescripcionExp(),
+                dtoexp.getFechaDesde(),
+                dtoexp.getFechaHasta());
+        
         servExp.save(experiencia);
         
         return new ResponseEntity(new Mensaje("Entrada creada exitosamente!"), HttpStatus.OK);
@@ -67,7 +72,7 @@ public class ExperienciaLaboralController {
     
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/editar/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody dtoExperienciaLaboral dtoexp){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody @Valid dtoExperienciaLaboral dtoexp){
         //Validamos si existe el ID
         if(!servExp.existsById(id))
             return new ResponseEntity(new Mensaje("No existe la entrada solicitada..."), HttpStatus.BAD_REQUEST);
@@ -81,6 +86,8 @@ public class ExperienciaLaboralController {
         ExperienciaLaboral experiencia = servExp.getOne(id).get();
         experiencia.setNombreExp(dtoexp.getNombreExp());
         experiencia.setDescripcionExp((dtoexp.getDescripcionExp()));
+        experiencia.setFechaDesde(dtoexp.getFechaDesde());
+        experiencia.setFechaHasta(dtoexp.getFechaHasta());
         
         servExp.save(experiencia);
         return new ResponseEntity(new Mensaje("Entrada editada exitosamente!"), HttpStatus.OK);

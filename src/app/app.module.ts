@@ -9,7 +9,7 @@ import { RedsocIconsComponent } from './components/header/redsoc-icons/redsoc-ic
 import { BannerComponent } from './components/banner/banner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
-import { NombreTituloComponent } from './components/acerca-de/nombre-titulo/nombre-titulo.component';
+
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
@@ -23,7 +23,7 @@ import { interceptorProvider } from './service/interceptor-service';
 import { ExperienciaCrearComponent } from './components/experiencia/experiencia-crear/experiencia-crear.component';
 import { ExperienciaEditarComponent } from './components/experiencia/experiencia-editar/experiencia-editar.component';
 import { EducacionCrearComponent } from './components/educacion/educacion-crear/educacion-crear.component';
-import { AcercaDeEditComponent } from './components/acerca-de/acerca-de-edit/acerca-de-edit.component';
+
 import { ProyectosRealizadosCrearComponent } from './components/proyectos-realizados/proyectos-realizados-crear/proyectos-realizados-crear.component';
 import { SkillsCrearComponent } from './components/skills/skills-crear/skills-crear.component';
 import { BannerEditComponent } from './components/banner/banner-edit/banner-edit.component';
@@ -37,7 +37,7 @@ import { EducacionItemComponent } from './components/educacion/educacion-item/ed
     RedsocIconsComponent,
     BannerComponent,
     AcercaDeComponent,
-    NombreTituloComponent,
+
     ExperienciaComponent,
     EducacionComponent,
     SkillsComponent,
@@ -47,7 +47,7 @@ import { EducacionItemComponent } from './components/educacion/educacion-item/ed
     ExperienciaCrearComponent,
     ExperienciaEditarComponent,
     EducacionCrearComponent,
-    AcercaDeEditComponent,
+
     ProyectosRealizadosCrearComponent,
     SkillsCrearComponent,
     BannerEditComponent,

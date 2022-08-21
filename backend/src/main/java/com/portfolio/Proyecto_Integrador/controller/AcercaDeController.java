@@ -1,18 +1,20 @@
 package com.portfolio.Proyecto_Integrador.controller;
 
+import com.portfolio.Proyecto_Integrador.dto.dtoAcercaDe;
 import com.portfolio.Proyecto_Integrador.entity.AcercaDe;
 import com.portfolio.Proyecto_Integrador.security.controller.Mensaje;
 import com.portfolio.Proyecto_Integrador.service.AcercaDeService;
+import java.util.Optional;
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -23,27 +25,37 @@ public class AcercaDeController {
     @Autowired
     AcercaDeService servAcercaDe;
     
-    @GetMapping("/detalle/{id}")
-    public ResponseEntity<AcercaDe>getById(@PathVariable("id")int id){
-        if(!servAcercaDe.existsById(id)){
-            return new ResponseEntity(new Mensaje("No existe el id solicitado..."), HttpStatus.BAD_REQUEST);
+    @GetMapping()
+    public ResponseEntity<AcercaDe>getAcercaDe(){
+
+        Optional<AcercaDe> acercaDe = servAcercaDe.getAcercaDe();
+        
+        if (acercaDe.isEmpty()) {
+             return new ResponseEntity(new Mensaje("No existe el id solicitado..."), HttpStatus.BAD_REQUEST);
         }
-        AcercaDe acercaDe = servAcercaDe.getById(id).get();
-        return new ResponseEntity(acercaDe, HttpStatus.OK);
+        
+        return new ResponseEntity(acercaDe.get(), HttpStatus.OK);
     }
     
-    /*@GetMapping("/traer/")
-    public AcercaDe getAcercaDe(){
-        return servAcercaDe.getById((int)1).orElse(null);
-    } */
-    
     @PreAuthorize("hasRole('ADMIN')")
-    @PutMapping("/editar/{id}")
-    public AcercaDe editAcercaDe(@PathVariable int id, @RequestParam("descripcion") String descripcion){
-        AcercaDe acercaDe= servAcercaDe.getById(id).orElse(null);
-        acercaDe.setDescripcion(descripcion);
+    @PutMapping()
+    public ResponseEntity<AcercaDe> editAcercaDe(@RequestBody @Valid dtoAcercaDe dto){
+        
+        Optional<AcercaDe> acercaDeOptional = servAcercaDe.getAcercaDe();
+        
+        if (acercaDeOptional.isEmpty()) {
+             return new ResponseEntity(new Mensaje("No existe el id solicitado..."), HttpStatus.BAD_REQUEST);
+        }
+        
+        AcercaDe acercaDe = acercaDeOptional.get();
+        
+        acercaDe.setNombre(dto.getNombre());
+        acercaDe.setApellido(dto.getApellido());
+        acercaDe.setTitulo(dto.getTitulo());
+        acercaDe.setDescripcion(dto.getDescripcion());
         servAcercaDe.save(acercaDe);
-        return acercaDe;
+        
+        return ResponseEntity.ok(acercaDe);
     }
     
 }

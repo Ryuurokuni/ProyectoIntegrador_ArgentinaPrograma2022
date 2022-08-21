@@ -4,6 +4,13 @@ import javax.validation.constraints.NotBlank;
 
 
 public class dtoAcercaDe {
+    
+    @NotBlank
+    private String nombre;
+    @NotBlank
+    private String apellido;
+    @NotBlank
+    private String titulo;
     @NotBlank
     private String descripcion;
 
@@ -20,6 +27,30 @@ public class dtoAcercaDe {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
     
 }
