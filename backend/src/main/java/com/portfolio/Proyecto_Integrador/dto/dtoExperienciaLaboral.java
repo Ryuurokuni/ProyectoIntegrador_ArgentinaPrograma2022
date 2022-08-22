@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-public class dtoExperienciaLaboral {
+public class DTOExperienciaLaboral {
 
     @NotBlank
     private String nombreExp;
@@ -15,13 +15,16 @@ public class dtoExperienciaLaboral {
     @NotNull
     private LocalDate fechaHasta;
 
-    public dtoExperienciaLaboral() {
+    public DTOExperienciaLaboral() {
     }
 
-    public dtoExperienciaLaboral(String nombreExp, String descripcionExp) {
+    public DTOExperienciaLaboral(String nombreExp, String descripcionExp, LocalDate fechaDesde, LocalDate fechaHasta) {
         this.nombreExp = nombreExp;
         this.descripcionExp = descripcionExp;
+        this.fechaDesde = fechaDesde;
+        this.fechaHasta = fechaHasta;
     }
+
 
     public String getNombreExp() {
         return nombreExp;

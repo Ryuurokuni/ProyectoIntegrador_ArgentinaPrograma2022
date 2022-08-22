@@ -3,7 +3,7 @@ package com.portfolio.Proyecto_Integrador.dto;
 import javax.validation.constraints.NotBlank;
 
 
-public class dtoAcercaDe {
+public class DTOAcercaDe {
     
     @NotBlank
     private String nombre;
@@ -14,10 +14,10 @@ public class dtoAcercaDe {
     @NotBlank
     private String descripcion;
 
-    public dtoAcercaDe() {
+    public DTOAcercaDe() {
     }
 
-    public dtoAcercaDe(String descripcion) {
+    public DTOAcercaDe(String descripcion) {
         this.descripcion = descripcion;
     }
 

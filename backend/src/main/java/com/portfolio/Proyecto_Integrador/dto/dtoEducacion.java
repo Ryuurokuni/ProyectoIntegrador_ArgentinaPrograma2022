@@ -5,7 +5,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 
-public class dtoEducacion {
+public class DTOEducacion {
     @NotBlank
     private String nombreEdu;
     @NotBlank
@@ -17,10 +17,10 @@ public class dtoEducacion {
     @NotNull
     private LocalDate fechaHasta;
 
-    public dtoEducacion() {
+    public DTOEducacion() {
     }
 
-    public dtoEducacion(String nombreEdu, String descripcionEdu) {
+    public DTOEducacion(String nombreEdu, String descripcionEdu) {
         this.nombreEdu = nombreEdu;
         this.descripcionEdu = descripcionEdu;
     }

@@ -1,6 +1,6 @@
 package com.portfolio.Proyecto_Integrador.controller;
 
-import com.portfolio.Proyecto_Integrador.dto.dtoEducacion;
+import com.portfolio.Proyecto_Integrador.dto.DTOEducacion;
 import com.portfolio.Proyecto_Integrador.entity.Educacion;
 import com.portfolio.Proyecto_Integrador.security.controller.Mensaje;
 import com.portfolio.Proyecto_Integrador.service.EducacionService;
@@ -56,7 +56,7 @@ public class EducacionController {
     
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/crear")
-    public ResponseEntity<?> create(@RequestBody @Valid dtoEducacion dtoeducacion){
+    public ResponseEntity<?> create(@RequestBody @Valid DTOEducacion dtoeducacion){
         if(StringUtils.isBlank(dtoeducacion.getNombreEdu())){
             return new ResponseEntity(new Mensaje("El campo nombre es obligatorio."), HttpStatus.BAD_REQUEST);
         }
@@ -77,7 +77,7 @@ public class EducacionController {
     
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/editar/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody @Valid dtoEducacion dtoeducacion){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody @Valid DTOEducacion dtoeducacion){
         if(!servEdu.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el id solicitado..."), HttpStatus.NOT_FOUND);
         }

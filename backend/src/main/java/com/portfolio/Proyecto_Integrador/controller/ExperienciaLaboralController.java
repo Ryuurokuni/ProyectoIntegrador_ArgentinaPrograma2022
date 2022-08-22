@@ -1,6 +1,6 @@
 package com.portfolio.Proyecto_Integrador.controller;
 
-import com.portfolio.Proyecto_Integrador.dto.dtoExperienciaLaboral;
+import com.portfolio.Proyecto_Integrador.dto.DTOExperienciaLaboral;
 import com.portfolio.Proyecto_Integrador.entity.ExperienciaLaboral;
 import com.portfolio.Proyecto_Integrador.security.controller.Mensaje;
 import com.portfolio.Proyecto_Integrador.service.ExperienciaLaboralService;
@@ -36,8 +36,8 @@ public class ExperienciaLaboralController {
     
     @GetMapping("/detalle/{id}")
     public ResponseEntity<ExperienciaLaboral> getById(@PathVariable("id") int id){
-        if(!servExp.existsById(id))
-            return new ResponseEntity(new Mensaje("No existe la entrada solicitada..."), HttpStatus.NOT_FOUND);
+        if(!servExp.existsById(id)){
+            return new ResponseEntity(new Mensaje("No existe la entrada solicitada..."), HttpStatus.NOT_FOUND);}
         ExperienciaLaboral experiencia = servExp.getOne(id).get();
         return new ResponseEntity(experiencia, HttpStatus.OK);
     }
@@ -54,13 +54,14 @@ public class ExperienciaLaboralController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/crear")
-    public ResponseEntity<?> create(@RequestBody @Valid dtoExperienciaLaboral dtoexp){      
+    public ResponseEntity<?> create(@RequestBody @Valid DTOExperienciaLaboral dtoexp){      
         if(StringUtils.isBlank(dtoexp.getNombreExp()))
             return new ResponseEntity(new Mensaje("El campo nombre es obligatorio."), HttpStatus.BAD_REQUEST);
         if(servExp.existsByNombreExp(dtoexp.getNombreExp()))
             return new ResponseEntity(new Mensaje("Ya existe una entrada con ese nombre."), HttpStatus.BAD_REQUEST);
         
-        ExperienciaLaboral experiencia = new ExperienciaLaboral(dtoexp.getNombreExp(),
+        ExperienciaLaboral experiencia = new ExperienciaLaboral(
+                dtoexp.getNombreExp(),
                 dtoexp.getDescripcionExp(),
                 dtoexp.getFechaDesde(),
                 dtoexp.getFechaHasta());
@@ -72,7 +73,7 @@ public class ExperienciaLaboralController {
     
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/editar/{id}")
-    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody @Valid dtoExperienciaLaboral dtoexp){
+    public ResponseEntity<?> update(@PathVariable("id") int id, @RequestBody @Valid DTOExperienciaLaboral dtoexp){
         //Validamos si existe el ID
         if(!servExp.existsById(id))
             return new ResponseEntity(new Mensaje("No existe la entrada solicitada..."), HttpStatus.BAD_REQUEST);
@@ -84,12 +85,14 @@ public class ExperienciaLaboralController {
             return new ResponseEntity(new Mensaje("El campo nombre es obligatorio."), HttpStatus.BAD_REQUEST);
         
         ExperienciaLaboral experiencia = servExp.getOne(id).get();
+        
         experiencia.setNombreExp(dtoexp.getNombreExp());
-        experiencia.setDescripcionExp((dtoexp.getDescripcionExp()));
+        experiencia.setDescripcionExp(dtoexp.getDescripcionExp());
         experiencia.setFechaDesde(dtoexp.getFechaDesde());
         experiencia.setFechaHasta(dtoexp.getFechaHasta());
         
         servExp.save(experiencia);
+        
         return new ResponseEntity(new Mensaje("Entrada editada exitosamente!"), HttpStatus.OK);
              
     }

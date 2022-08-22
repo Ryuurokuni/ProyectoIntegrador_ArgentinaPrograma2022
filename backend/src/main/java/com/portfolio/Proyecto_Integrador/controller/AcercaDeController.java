@@ -1,6 +1,6 @@
 package com.portfolio.Proyecto_Integrador.controller;
 
-import com.portfolio.Proyecto_Integrador.dto.dtoAcercaDe;
+import com.portfolio.Proyecto_Integrador.dto.DTOAcercaDe;
 import com.portfolio.Proyecto_Integrador.entity.AcercaDe;
 import com.portfolio.Proyecto_Integrador.security.controller.Mensaje;
 import com.portfolio.Proyecto_Integrador.service.AcercaDeService;
@@ -39,7 +39,7 @@ public class AcercaDeController {
     
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping()
-    public ResponseEntity<AcercaDe> editAcercaDe(@RequestBody @Valid dtoAcercaDe dto){
+    public ResponseEntity<AcercaDe> editAcercaDe(@RequestBody @Valid DTOAcercaDe dto){
         
         Optional<AcercaDe> acercaDeOptional = servAcercaDe.getAcercaDe();
         

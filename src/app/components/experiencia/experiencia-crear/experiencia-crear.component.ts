@@ -21,10 +21,16 @@ export class ExperienciaCrearComponent implements OnInit {
   }
 
   onCreate(): void {
-    const expe = new ExperienciaLaboral(this.nombreExp, this.descripcionExp);
-    this.sExperiencia.save(expe).subscribe(
+    const exp : ExperienciaLaboral = {
+      id: 0,
+      nombreExp: this.nombreExp,
+      descripcionExp: this.descripcionExp,
+      fechaDesde: new Date(),
+      fechaHasta: new Date()
+    };
+    this.sExperiencia.save(exp).subscribe(
       data => {
-        alert("Experiencia añadida exitosamente!");
+        alert("Educación añadida exitosamente!");
         // this.router.navigate(['']);
         window.location.reload();
       }, err => {
