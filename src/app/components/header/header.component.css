@@ -5,23 +5,70 @@
   
 } */
 
-.container{
+/* .container-fluid{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: pink;
+} */
+
+
+.row{
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: pink;
 }
 
-redsoc-icons{
+/* redsoc-icons{
   float: right;
   margin-top: 25px;
-}
+} */
 
 #YP{
   float: left;
 }
 
-/* @media (max-width: 575px){
-  TRATAR DE ACOMODAR EL HEADER
-  }
-*/
+img{
+  width: 50px;
+  margin: 0 0.3rem;
+}
+
+
+
+.redes-soc{
+  padding-right: 1rem;
+}
+
+.logo-arg-prog{
+  float: left;
+}
+
+
+/* .imag{
+  float:right;
+} */
+
+
+
+
+.btn{
+  border-width: medium;
+  font-weight: bold;
+  margin-right:0;
+}
+
+#logoAP{
+  height: 100px;
+  width: auto;
+  margin:0;
+}
+
+#YP{
+  font-family:'Trebuchet MS', sans-serif;
+  /* font-family: 'Roboto Slab', serif; */
+  /* font-size: x-large; */
+  font-size: 2rem;
+  font-weight: 600;
+  padding-top: 1rem;
+}

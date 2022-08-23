@@ -50,7 +50,7 @@ public class ProyectoController {
             return new ResponseEntity(new Mensaje("No existe el id solicitado..."), HttpStatus.NOT_FOUND);
         }
         servProyecto.delete(id);
-        return new ResponseEntity(new Mensaje("Entrada de educación eliminada exitosamente!"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Entrada de proyecto eliminada exitosamente!"), HttpStatus.OK);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
@@ -71,7 +71,7 @@ public class ProyectoController {
                 
             );
         servProyecto.save(proyecto);
-        return new ResponseEntity(new Mensaje("Educacion creada exitosamente!"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Proyecto creado exitosamente!"), HttpStatus.OK);
                 
     }
     
@@ -97,6 +97,6 @@ public class ProyectoController {
         
         servProyecto.save(proyecto);
         
-        return new ResponseEntity(new Mensaje("Educacion editada exitosamente!"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Proyecto editado exitosamente!"), HttpStatus.OK);
     }
 }

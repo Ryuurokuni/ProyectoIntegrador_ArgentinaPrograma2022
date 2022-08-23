@@ -9,7 +9,9 @@
 }
 
 #YP{
-  font-family: 'Roboto Slab', serif;
-  font-size: xx-large;
-  font-weight: 500;
+  font-family:'Trebuchet MS', sans-serif;
+  /* font-family: 'Roboto Slab', serif; */
+  font-size: x-large;
+  font-weight: 600;
+  padding-top: 1rem;
 }

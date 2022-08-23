@@ -38,6 +38,7 @@ export class SkillsCrearComponent implements OnInit {
       this.sSkill.save(skill).subscribe({
         next: (x) => {
           this.sSkill.fetchData();
+          window.location.reload();
         },
       });
     }
