@@ -24,7 +24,7 @@ export class EducacionComponent implements OnInit {
   constructor(private educacionS: EducacionService, private tokenService: TokenService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    // this.educacionS.fetchData();
+    this.educacionS.fetchData();
   }
 
   delete(id?: number){

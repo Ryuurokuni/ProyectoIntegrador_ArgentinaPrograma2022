@@ -24,7 +24,7 @@ export class ExperienciaComponent implements OnInit {
   constructor(private sExperiencia: ExperiencialaboralService, private tokenService: TokenService, private authService: AuthService) { }
 
   ngOnInit(): void {
-    // this.educacionS.fetchData();
+    this.sExperiencia.fetchData();
   }
 
   delete(id?: number){

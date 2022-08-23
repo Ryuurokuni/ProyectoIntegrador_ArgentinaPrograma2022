@@ -46,12 +46,14 @@ export class EducacionItemComponent implements OnInit {
   }
 
   delete() {
+    if (window.confirm("Realmente quiere eliminar esta entrada?")) {
     this.eduService.delete(this.item.id).subscribe({
       next: (x) => {
         
         this.eduService.fetchData();
       },
     });
+  }
 
 
   }

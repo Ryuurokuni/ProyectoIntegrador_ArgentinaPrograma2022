@@ -64,8 +64,8 @@ public class ExperienciaLaboralController {
                 dtoexp.getNombreExp(),
                 dtoexp.getDescripcionExp(),
                 dtoexp.getFechaDesde(),
-                dtoexp.getFechaHasta());
-        
+                dtoexp.getFechaHasta()
+        );
         servExp.save(experiencia);
         
         return new ResponseEntity(new Mensaje("Entrada creada exitosamente!"), HttpStatus.OK);

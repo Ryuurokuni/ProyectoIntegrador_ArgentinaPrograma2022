@@ -47,12 +47,14 @@ export class ExperienciaItemComponent implements OnInit {
   }
 
   delete() {
-    this.expService.delete(this.item.id).subscribe({
-      next: (x) => {
-        
-        this.expService.fetchData();
-      },
-    });
+    if (window.confirm("Realmente quiere eliminar esta entrada?")) {
+      this.expService.delete(this.item.id).subscribe({
+        next: (x) => {
+          this.expService.fetchData();
+        },
+      });
+    }
+    
 
 
   }

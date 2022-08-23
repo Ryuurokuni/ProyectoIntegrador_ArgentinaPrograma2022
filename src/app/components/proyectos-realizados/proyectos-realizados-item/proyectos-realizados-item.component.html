@@ -1,26 +1,28 @@
 <div  [ngClass]="['d-flex w-100 listItem my-2', isLast ? '': 'bordecito']">
-  <!-- item.fechaDesde | date:'mm-yyyy' } -->
-  <small *ngIf="!editMode" class="p-2">{{ item.fechaDesde}} - {{ item.fechaHasta}}</small>
+  <small *ngIf="!editMode" class="p-2">{{ item.fecha}}</small>
   <small *ngIf="editMode" class="px-2"> 
-    <label for="" class="">Desde:</label>
-    <input type="date" placeholder="Desde" [(ngModel)]="desde" class="form-control form-control-sm">
-    <label for="" class="">Hasta:</label>
-    <input type="date" placeholder="Hasta" [(ngModel)]="hasta" class="form-control form-control-sm">
+    <label for="" class="">Fecha de Realización:</label>
+    <input type="date" placeholder="Desde" [(ngModel)]="fecha" class="form-control form-control-sm">
   </small>
   <div class="w-100" *ngIf="!editMode">
-    <h5 class="mb-1">{{ item.nombreEdu }}</h5>
+    <h5 class="mb-1">{{ item.nombre }}</h5>
     <p class="p-2 mb-0">
-      {{ item.descripcionEdu }}
+      {{ item.descripcion }}
     </p>
+    <a href="{{item.link}}" target="_blank" >Link del Proyecto</a>
   </div>
   <small class="w-100 pe-2" *ngIf="editMode">
     <div class="">
-      <label for="" class="">Titulo:</label>
-      <input type="text" [(ngModel)]="nombreEdu" class="form-control form-control-sm">
+      <label for="" class="">Nombre:</label>
+      <input type="text" [(ngModel)]="nombre" class="form-control form-control-sm">
     </div>
     <div class="p-0 mb-1">
       <label for="" class="">Descripcion:</label>
-      <input type="text" [(ngModel)]="descripcionEdu" class="form-control form-control-sm">
+      <input type="text" [(ngModel)]="descripcion" class="form-control form-control-sm">
+    </div>
+    <div class="p-0 mb-1">
+      <label for="" class="">Link:</label>
+      <input type="text" [(ngModel)]="link" class="form-control form-control-sm">
     </div>
   </small>
   <div *ngIf="isLoggedIn">

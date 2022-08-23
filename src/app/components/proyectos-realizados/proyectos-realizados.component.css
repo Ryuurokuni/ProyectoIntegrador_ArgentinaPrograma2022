@@ -1,17 +1,28 @@
 .row{
-  padding: 20px;
-  background-color: beige;
+  padding: 2rem;
+  
+}
+/* 
+div{
+  background-color: #fdeade;
+} */
+
+h2{
+  text-align: start;
 }
 
-.container{
-  width: auto;
-}
 
-.proyecto{
-  display: inline-block;
-  text-align: justify;  
-}
 
 #titulo{
   font-weight: bold;
+}
+table{
+  width: 100%
+}
+
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }

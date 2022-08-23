@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Proyecto } from 'src/app/model/proyecto';
+import { AuthService } from 'src/app/service/auth.service';
+import { ProyectoService } from 'src/app/service/proyecto.service';
 import { TokenService } from 'src/app/service/token.service';
 
 @Component({
@@ -8,16 +11,35 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class ProyectosRealizadosComponent implements OnInit {
 
-  constructor(private tokenService: TokenService) { }
-
-  isLogged = false;
-  
-  ngOnInit(): void {
-    if(this.tokenService.getToken()){
-      this.isLogged = true;
-    } else {
-      this.isLogged = false;
-    }
+  public get items() : Proyecto[] {
+    return this.sProyecto.items;
+  }
+  public get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
+  }
+  public get anyInserting(): boolean {
+    return this.sProyecto.items.some(x=> x.id == 0);
   }
 
+  constructor(private sProyecto: ProyectoService, private tokenService: TokenService, private authService: AuthService) { }
+
+  ngOnInit(): void {
+    this.sProyecto.fetchData();
+  }
+
+  delete(id?: number){
+
+  }
+
+
+
+  CreateNew(){
+    this.sProyecto.apendToArray({
+      id: 0,
+      descripcion: "",
+      nombre: "",
+      fecha: null,
+      link: ""
+    })
+  }
 }

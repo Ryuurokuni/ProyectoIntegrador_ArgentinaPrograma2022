@@ -1,0 +1,8 @@
+:host {
+  width: 100%;
+  display: flex;
+}
+
+.bordecito{
+  border-bottom: 1px solid #ccc;
+}

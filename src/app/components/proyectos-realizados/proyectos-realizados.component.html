@@ -1,4 +1,24 @@
 <div class="row">
+  <h2 id="titulo">Proyectos Realizados
+    <button *ngIf="isLoggedIn && !anyInserting" type="button" class="btn btn-outline-dark" (click)="CreateNew()"><i class="bi bi-plus"></i></button>
+
+  </h2>
+  <div class="col-lg-10"></div>
+
+  <div class="">
+    <ul>
+      <li *ngFor="let item of items; index as i">
+        <app-proyectos-realizados-item [item]="item" [isLast]="i == items.length - 1"></app-proyectos-realizados-item>
+      </li>
+    </ul>
+  </div>
+
+
+</div>
+
+
+
+<!-- <div class="row">
   <h2 id="titulo">Proyectos realizados</h2>
   <app-proyectos-realizados-crear *ngIf="isLogged"></app-proyectos-realizados-crear>
   <div class="container">
@@ -9,4 +29,4 @@
     <div class="col-sm-12 col-md-3 col-lg-3 offset-md-1 offset-lg-1">
     </div>
   </div>
-</div>
+</div> -->
