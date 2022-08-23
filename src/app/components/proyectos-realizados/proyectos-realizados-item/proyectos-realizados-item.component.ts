@@ -41,6 +41,7 @@ export class ProyectosRealizadosItemComponent implements OnInit {
           : new Date()).toJSON().split('T')[0];
     this.nombre = this.item.nombre;
     this.descripcion = this.item.descripcion;
+    this.link = this.item.link;
   }
 
   delete() {

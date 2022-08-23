@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Skill } from 'src/app/model/skill';
+import { AuthService } from 'src/app/service/auth.service';
+import { SkillService } from 'src/app/service/skill.service';
 import { TokenService } from 'src/app/service/token.service';
 
 @Component({
@@ -8,16 +11,33 @@ import { TokenService } from 'src/app/service/token.service';
 })
 export class SkillsComponent implements OnInit {
 
-  constructor(private tokenService: TokenService) { }
-
-  isLogged = false;
+  // @Input() item!: Skill;
+  item: Skill[] = [];
   
+  public get isLoggedIn(): boolean {
+    return this.authService.isLoggedIn;
+  }
+  
+  public get items() : Skill[] {
+    return this.sSkill.items;
+  }
+
+  constructor(private sSkill: SkillService, private tokenService: TokenService, private authService: AuthService) { }
+
   ngOnInit(): void {
-    if(this.tokenService.getToken()){
-      this.isLogged = true;
-    } else {
-      this.isLogged = false;
-    }
+    this.sSkill.fetchData();
+  }
+
+  delete(id?: number) {
+    if (window.confirm("Realmente quiere eliminar esta entrada?")) {
+    this.sSkill.delete(id).subscribe({
+      next: (x) => {
+        this.sSkill.fetchData();
+      },
+    });
+  }
+
+
   }
 
 

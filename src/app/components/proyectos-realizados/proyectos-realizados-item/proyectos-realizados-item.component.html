@@ -2,7 +2,7 @@
   <small *ngIf="!editMode" class="p-2">{{ item.fecha}}</small>
   <small *ngIf="editMode" class="px-2"> 
     <label for="" class="">Fecha de Realización:</label>
-    <input type="date" placeholder="Desde" [(ngModel)]="fecha" class="form-control form-control-sm">
+    <input type="date" placeholder="fecha" [(ngModel)]="fecha" class="form-control form-control-sm">
   </small>
   <div class="w-100" *ngIf="!editMode">
     <h5 class="mb-1">{{ item.nombre }}</h5>

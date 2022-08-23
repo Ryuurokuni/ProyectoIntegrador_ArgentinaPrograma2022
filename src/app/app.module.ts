@@ -30,6 +30,7 @@ import { BannerEditComponent } from './components/banner/banner-edit/banner-edit
 import { EducacionItemComponent } from './components/educacion/educacion-item/educacion-item.component';
 import { ExperienciaItemComponent } from './components/experiencia/experiencia-item/experiencia-item.component';
 import { ProyectosRealizadosItemComponent } from './components/proyectos-realizados/proyectos-realizados-item/proyectos-realizados-item.component';
+import { SkillsItemComponent } from './components/skills/skills-item/skills-item.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { ProyectosRealizadosItemComponent } from './components/proyectos-realiza
     BannerEditComponent,
     EducacionItemComponent,
     ExperienciaItemComponent,
-    ProyectosRealizadosItemComponent
+    ProyectosRealizadosItemComponent,
+    SkillsItemComponent
   ],
   imports: [
     BrowserModule,
