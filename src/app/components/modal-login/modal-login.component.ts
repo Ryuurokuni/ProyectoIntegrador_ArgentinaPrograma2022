@@ -32,7 +32,7 @@ export class ModalLoginComponent implements OnInit {
   }
 
   openLG(contenido: any){
-    this.modal.open(contenido,{size:'lg', centered:true});
+    this.modal.open(contenido,{size:'md', centered:true});
   }
 
   onLogin(): void{
