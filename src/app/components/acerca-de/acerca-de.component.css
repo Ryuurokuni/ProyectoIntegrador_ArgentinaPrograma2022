@@ -4,7 +4,7 @@
 }  */
 
 span{
-  font-family: 'Open Sans', sans-serif;
+
   margin: 0;
 }
 
@@ -25,12 +25,12 @@ p{
 }
 
 #nombre{
-  font-family: 'Open Sans', sans-serif;
+ 
   font-weight: bold;
 }
 
 p{
-  font-family: 'Open Sans', sans-serif;
+
   font-weight: 400;
 }
 

@@ -1,74 +1,57 @@
-/* div{
-  display: flex;
-  align-items: center;
-  justify-content:space-between;
-  
-} */
 
-/* .container-fluid{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: pink;
-} */
-
-
-.row{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: pink;
+.navcontent{
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.5rem;
 }
 
-/* redsoc-icons{
-  float: right;
-  margin-top: 25px;
-} */
-
-#YP{
-  float: left;
+nav img{
+  height: 24px;
 }
 
-img{
-  width: 50px;
-  margin: 0 0.3rem;
+#logoAP{
+  height: 64px;
+  width: auto;
+
+}
+
+@media (min-width: 650px) {
+  .navcontent{
+    font-size: 2rem;
+  }
+
+  #logoAP{
+    height: 72px;
+  }
+
+  nav img{
+    height: 42px;
+  }
+
 }
 
 
-
-.redes-soc{
-  padding-right: 1rem;
+@media (min-width: 1000px) {
+  .navcontent{
+    width: 1000px;
+  }
 }
-
-.logo-arg-prog{
-  float: left;
-}
-
-
-/* .imag{
-  float:right;
-} */
-
 
 
 
 .btn{
   border-width: medium;
   font-weight: bold;
-  margin-right:0;
 }
 
-#logoAP{
-  height: 100px;
-  width: auto;
-  margin:0;
-}
+
+
+/* nav{
+  height: 72px;
+} */
+
+
 
 #YP{
-  font-family:'Trebuchet MS', sans-serif;
-  /* font-family: 'Roboto Slab', serif; */
-  /* font-size: x-large; */
-  font-size: 2rem;
   font-weight: 600;
-  padding-top: 1rem;
 }
