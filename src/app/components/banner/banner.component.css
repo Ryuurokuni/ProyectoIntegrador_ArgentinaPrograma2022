@@ -4,17 +4,24 @@
 }
 
 #foto-div{
-  max-width: 30%;
   position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: -4rem;
+  /* ;
+  
   bottom: -25%;
   margin-left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%); */
 }
 
 #foto-div img{
   border-radius: 50%;
+  max-width: 30%;
+  margin: 0 auto;
 }
 
 .banner-component{
-  margin-bottom: 15%;
+  margin-bottom: 4rem;
 }

@@ -2,17 +2,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
 
-*{
+/* *{
   box-sizing: border-box;
   margin: 0;
-}
+} */
 
 
 html, body {
   font-family: 'Lato', sans-serif;
   min-height: 100vh;
+  /* background-color: whitesmoke; */
 }
 
+/* main{
+  background-color: white;
+} */
 
 
 .primario {

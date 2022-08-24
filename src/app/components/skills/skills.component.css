@@ -1,7 +1,4 @@
-.row{
-  padding: 2rem;
-  
-}
+
 /* 
 div{
   background-color: #fdeade;
@@ -25,4 +22,24 @@ ul{
   margin: 0;
   padding: 0;
   list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 750px) {
+  ul{
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}
+
+@media (min-width: 1050px) {
+  ul{
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+}
+
+li{
+  background-color: red;
 }
