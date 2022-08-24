@@ -1,5 +1,5 @@
 <div  [ngClass]="['d-flex w-100 listItem my-2', isLast ? '': 'bordecito']">
-  <small *ngIf="!editMode" class="p-2">{{ item.fechaDesde}} - {{ item.fechaHasta}}</small>
+  <small *ngIf="!editMode" class="p-2">{{ item.fechaDesde | date:"MM-yyyy"}} - {{ item.fechaHasta | date:"MM-yyyy"}}</small>
   <small *ngIf="editMode" class="px-2"> 
     <label for="" class="">Desde:</label>
     <input type="date" placeholder="Desde" [(ngModel)]="desde" class="form-control form-control-sm">
