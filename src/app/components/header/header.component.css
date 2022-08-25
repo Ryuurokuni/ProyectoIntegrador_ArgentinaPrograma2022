@@ -2,7 +2,7 @@
 .navcontent{
   width: 100%;
   margin: 0 auto;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
 }
 /* nav{
   width: 100vw;
@@ -16,6 +16,13 @@ nav img{
   height: 64px;
   width: auto;
 
+}
+
+@media (max-width:477px){
+  #YP{
+    font-size: 1.1rem;
+    /* display: none; */
+  }
 }
 
 @media (min-width: 650px) {

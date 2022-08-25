@@ -20,5 +20,12 @@ html, body {
 
 
 .primario {
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
+  /* background-color:  #c76c3f; */
+  /* background-color: #bd9476; */
+  background-color: #ce956c;
+}
+
+.prim{
+  padding: 0 1rem;
 }

@@ -1,8 +1,8 @@
-<div id="contenedor-acerca-de" class="container px-0">
+<div id="contenedor-acerca-de" class="px-0">
   <div class="d-flex">
     <div id="contenedor-nombre-titulo" class="w-100">
       <!-- prueba, borrar despues -->
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div>
         <h2 *ngIf="!editMode" id="nombre" class="text-center">
           {{ acercaDe?.nombre }} {{ acercaDe?.apellido }}
         </h2>
@@ -30,11 +30,10 @@
   </div>
  
 
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+  <div>
     <span>
       <h3 id="titulo" class="text-center">Acerca de mí</h3>
-
-      <p *ngIf="!editMode" class="text-center p-2">
+      <p *ngIf="!editMode" class="text-center">
         {{ acercaDe?.descripcion }}
       </p>
       <div *ngIf="editMode">

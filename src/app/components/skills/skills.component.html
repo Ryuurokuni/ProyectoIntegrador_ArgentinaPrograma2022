@@ -1,4 +1,4 @@
-<div>
+<div class="prim">
   <h2 id="titulo">Skills
     <app-skills-crear></app-skills-crear>
 
@@ -9,14 +9,15 @@
       <li *ngFor="let item of items; index as i">
         <div class="text-center"><circle-progress
           [title]="item.nombre"
+          [titleFontWeight]="'bold'"
           [showUnits]="false"
           [showSubtitle]="false"
           [percent]="item.porcentaje"
           [radius]="100"
           [outerStrokeWidth]="8"
           [innerStrokeWidth]="4"
-          [outerStrokeColor]="'blue'"
-          [innerStrokeColor]="'blue'"
+          [outerStrokeColor]="'#ce956c'"
+          [innerStrokeColor]="'#ce956c'"
           [animation]="true"
           [animationDuration]="300"
           ></circle-progress>

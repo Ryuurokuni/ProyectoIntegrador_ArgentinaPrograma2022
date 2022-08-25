@@ -4,7 +4,6 @@
 }  */
 
 span{
-
   margin: 0;
 }
 
@@ -12,17 +11,13 @@ p{
   margin: 0;
 }
 
-#contenedor-acerca-de{
-  background-color: #f0defd;
-}
-
 #titulo{
   font-weight: bold;
 }
 
-#contenedor-nombre-titulo{
+/* #contenedor-nombre-titulo{
   background-color: #fcf7de;
-}
+} */
 
 #nombre{
  
