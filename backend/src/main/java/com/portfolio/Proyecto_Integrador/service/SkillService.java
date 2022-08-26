@@ -26,8 +26,8 @@ public class SkillService {
         return repoSkill.findByNombre(nombre);
     }
     
-    public void save(Skill educacion){
-        repoSkill.save(educacion);
+    public void save(Skill skill){
+        repoSkill.save(skill);
     }
     
     public void delete(int id){

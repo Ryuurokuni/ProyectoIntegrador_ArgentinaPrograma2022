@@ -31,6 +31,8 @@ import { EducacionItemComponent } from './components/educacion/educacion-item/ed
 import { ExperienciaItemComponent } from './components/experiencia/experiencia-item/experiencia-item.component';
 import { ProyectosRealizadosItemComponent } from './components/proyectos-realizados/proyectos-realizados-item/proyectos-realizados-item.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { IdiomasComponent } from './components/idiomas/idiomas.component';
+import { IdiomasCrearComponent } from './components/idiomas/idiomas-crear/idiomas-crear.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,9 @@ import { ProfileComponent } from './components/profile/profile.component';
     EducacionItemComponent,
     ExperienciaItemComponent,
     ProyectosRealizadosItemComponent,
-    ProfileComponent
+    ProfileComponent,
+    IdiomasComponent,
+    IdiomasCrearComponent
   ],
   imports: [
     BrowserModule,
