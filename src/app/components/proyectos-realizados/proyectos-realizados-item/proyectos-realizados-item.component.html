@@ -4,7 +4,7 @@
     <label for="" class="">Fecha de Realización:</label>
     <input type="date" placeholder="fecha" [(ngModel)]="fecha" class="form-control form-control-sm">
   </small>
-  <div class="w-100" *ngIf="!editMode">
+  <div class="w-100 mb-2" *ngIf="!editMode">
     <h5 class="mb-1">{{ item.nombre }}</h5>
     <p class="p-2 mb-0">
       {{ item.descripcion }}

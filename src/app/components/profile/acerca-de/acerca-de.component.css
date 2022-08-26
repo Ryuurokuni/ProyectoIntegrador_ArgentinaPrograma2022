@@ -36,20 +36,43 @@ textarea{
 }
 
 #foto-div{
-  
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   top: 0;
+  padding-top: 140px;
  
   /* background-color: green; */
   
 }
+#foto-div:hover #hover-chirimbolo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+#hover-chirimbolo{
+  cursor: pointer;
+  display: none;
+  top: 0;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.685);
+  color: white;
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  transform: translateY(-4rem) scale(1.7, 1.7);
+}
+
+
 
 img#profile-pic {
-  /* position: absolute; */
+  top: 0;
+  position: absolute;
   transform: translateY(-4rem) scale(1.7, 1.7);
   width: 140px;
+  height: 140px;
   align-self: center;
 
   border-radius: 50%;
@@ -68,14 +91,7 @@ img#profile-pic {
   padding: 1rem; 
 }
 
-.grid-container{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 16rem auto;
-  background-color: whitesmoke;
-  /* border: solid 1px #ccc; */
-  border: solid 1px #ccc;
-}
+
 
 #contenedor-acerca-de{
   margin-bottom: 2rem;
@@ -100,6 +116,14 @@ img#profile-pic {
   padding: 0 1rem;
 }
 
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  background-color: whitesmoke;
+  /* border: solid 1px #ccc; */
+  border: solid 1px #ccc;
+}
 
 @media (min-width: 750px) {
   .grid-container{

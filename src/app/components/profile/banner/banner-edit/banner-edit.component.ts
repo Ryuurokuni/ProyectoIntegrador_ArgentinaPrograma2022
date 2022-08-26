@@ -34,7 +34,6 @@ export class BannerEditComponent implements OnInit {
     this.service.submit(fd)
         .subscribe(() => {
           this.imagenesGuardadas.emit(true);
-          alert("Ta bien");
           window.location.reload();
         });
    
