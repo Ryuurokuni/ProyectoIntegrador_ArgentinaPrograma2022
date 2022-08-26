@@ -12,13 +12,15 @@ public class Idioma {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
+    private String nombreReal;
     private int porcentaje;
 
     public Idioma() {
     }
 
-    public Idioma(String nombre, int porcentaje) {
+    public Idioma(String nombre, String nombreReal, int porcentaje) {
         this.nombre = nombre;
+        this.nombreReal = nombreReal;
         this.porcentaje = porcentaje;
     }
 
@@ -38,6 +40,14 @@ public class Idioma {
         this.nombre = nombre;
     }
 
+    public String getNombreReal() {
+        return nombreReal;
+    }
+
+    public void setNombreReal(String nombreReal) {
+        this.nombreReal = nombreReal;
+    }
+
     public int getPorcentaje() {
         return porcentaje;
     }
@@ -45,6 +55,9 @@ public class Idioma {
     public void setPorcentaje(int porcentaje) {
         this.porcentaje = porcentaje;
     }
+
+    
+    
     
 }
 

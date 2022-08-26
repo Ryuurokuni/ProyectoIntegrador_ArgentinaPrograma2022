@@ -16,6 +16,7 @@ export class IdiomasCrearComponent implements OnInit {
   }
 
   public nombre: string = '';
+  public nombreReal: string = '';
   public porcentaje: number = 0;
 
   constructor(public modal:NgbModal, private authService: AuthService, private sIdioma: IdiomaService) { }
@@ -32,6 +33,7 @@ export class IdiomasCrearComponent implements OnInit {
     var idioma: Idioma = {
       id: 0,
       nombre: this.nombre,
+      nombreReal:this.nombreReal,
       porcentaje: this.porcentaje
     };
       this.sIdioma.save(idioma).subscribe({

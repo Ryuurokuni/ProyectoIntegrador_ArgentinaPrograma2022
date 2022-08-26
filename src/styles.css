@@ -33,3 +33,38 @@ html, body {
   padding: 1rem;
   box-shadow: 1px 4px 5px #2222226b
 }
+
+.boton-submit{
+  font-family: 'Lato', sans-serif;
+  background-color: #ce956c;
+  color: black;
+  border-color: black;
+  border-width: 3px;
+}
+
+.boton-submit:hover{
+  background-color: rgb(39, 39, 39);
+  border-color: rgb(39, 39, 39);
+}
+
+.modal-edit-header{
+  background-color: #ce956c;
+}
+
+.modal-edit-body{
+  background-color: whitesmoke;
+}
+
+/* .modal-header{
+  border-width: 1px;
+  border-color: #ce956c;
+  border-bottom-style: none;
+} */
+
+/* .modal-content{
+  border-width: 1px;
+  border-color: whitesmoke;
+  border-bottom-left-radius: 0;
+  box-shadow: 1px 4px 5px #2222226b;
+  border-radius: 10px;
+} */

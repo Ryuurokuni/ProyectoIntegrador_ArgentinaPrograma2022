@@ -66,7 +66,9 @@ public class IdiomaController {
         
         Idioma idioma = new Idioma(
                 dtoidioma.getNombre(),
+                dtoidioma.getNombreReal(),
                 dtoidioma.getPorcentaje()
+                
             );
         servIdioma.save(idioma);
         return new ResponseEntity(new Mensaje("Idioma creado exitosamente!"), HttpStatus.OK);
@@ -89,6 +91,7 @@ public class IdiomaController {
         Idioma idioma = servIdioma.getOne(id).get();
         
         idioma.setNombre(dtoidioma.getNombre());
+        idioma.setNombre(dtoidioma.getNombreReal());
         idioma.setPorcentaje(dtoidioma.getPorcentaje());
         
         servIdioma.save(idioma);
