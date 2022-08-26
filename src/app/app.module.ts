@@ -30,7 +30,6 @@ import { BannerEditComponent } from './components/profile/banner/banner-edit/ban
 import { EducacionItemComponent } from './components/educacion/educacion-item/educacion-item.component';
 import { ExperienciaItemComponent } from './components/experiencia/experiencia-item/experiencia-item.component';
 import { ProyectosRealizadosItemComponent } from './components/proyectos-realizados/proyectos-realizados-item/proyectos-realizados-item.component';
-import { SkillsItemComponent } from './components/skills/skills-item/skills-item.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
@@ -58,7 +57,6 @@ import { ProfileComponent } from './components/profile/profile.component';
     EducacionItemComponent,
     ExperienciaItemComponent,
     ProyectosRealizadosItemComponent,
-    SkillsItemComponent,
     ProfileComponent
   ],
   imports: [

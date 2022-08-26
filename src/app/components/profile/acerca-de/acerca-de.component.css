@@ -95,7 +95,8 @@ img#profile-pic {
 
 #contenedor-acerca-de{
   margin-bottom: 2rem;
-  position: relative
+  position: relative;
+  box-shadow: 1px 4px 5px #2222226b;
   
   
 }
@@ -105,7 +106,7 @@ img#profile-pic {
   display: flex;
   top: 0;
   right: 0;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .aboutMe{
