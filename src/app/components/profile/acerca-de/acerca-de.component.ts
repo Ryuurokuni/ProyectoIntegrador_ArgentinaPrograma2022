@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AcercaDe } from 'src/app/model/acerca-de';
 import { AcercaDeService } from 'src/app/service/acerca-de.service';
 import { AuthService } from 'src/app/service/auth.service';
+import { BannerService } from 'src/app/service/banner-service.service';
 import { TokenService } from 'src/app/service/token.service';
 
 @Component({
@@ -27,7 +28,9 @@ export class AcercaDeComponent implements OnInit {
   public apellido: string = "";
   public descripcion: string = "";
 
-  constructor(private acercaDeService: AcercaDeService, private authService: AuthService) { }
+  readonly profileUrl = this.bservice.profileUrl;
+
+  constructor(private acercaDeService: AcercaDeService, private authService: AuthService, private bservice: BannerService) { }
 
   ngOnInit(): void {
    

@@ -8,7 +8,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  bottom: -4rem;
+  /* bottom: -4rem; */
   /* ;
   
   bottom: -25%;
@@ -18,10 +18,23 @@
 
 #foto-div img{
   border-radius: 50%;
-  max-width: 30%;
+  /* max-width: 30%; */
+
   margin: 0 auto;
 }
 
-.banner-component{
-  margin-bottom: 4rem;
+.banner-component .banner{
+  /* margin-bottom: 4rem; */
+  position: relative;
+}
+app-banner-edit{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.bannerimg{
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
 }

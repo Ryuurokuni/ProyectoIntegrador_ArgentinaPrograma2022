@@ -1,0 +1,115 @@
+<div id="contenedor-acerca-de">
+  <div class="actions-container">
+    <button *ngIf="isLoggedIn && !editMode" type="button" class="btn btn-outline-dark" (click)="toggleEdit()">
+      <i class="bi bi-pencil-fill"></i>
+    </button>
+    <button *ngIf="isLoggedIn && editMode" type="button" class="btn btn-outline-dark" (click)="save()">
+      <i class="bi bi-save-fill"></i>
+    </button>
+    <button *ngIf="isLoggedIn && editMode" type="button" class="btn btn-danger" (click)="cancel()">
+      <i class="bi bi-x-square-fill"></i>
+    </button>
+  </div>
+  <div class="grid-container">
+    <div class="profile-col">
+      <div id="foto-div">
+        <img id="profile-pic" class="img-fluid" [src]="profileUrl" alt="" />
+      </div>
+      <div>
+        <h2 *ngIf="!editMode" id="nombre" class="text-center">
+          {{ acercaDe?.nombre }} {{ acercaDe?.apellido }}
+        </h2>
+        <div *ngIf="editMode" class="d-flex name-edit-container gap-2 mb-2">
+          <input
+            type="text"
+            class="w-100"
+            [(ngModel)]="nombre"
+            class="form-control form-control-sm"
+          />
+          <input
+            type="text"
+            class="w-100"
+            [(ngModel)]="apellido"
+            class="form-control form-control-sm"
+          />
+        </div>
+        <p *ngIf="!editMode" class="text-center ">{{ acercaDe?.titulo }}</p>
+        <p *ngIf="editMode" class="name-edit-container">
+          <input
+            type="text"
+            class="w-100"
+            [(ngModel)]="titulo"
+            class="form-control form-control-sm"
+          />
+        </p>
+      </div>
+    </div>
+    <div class="about-col">
+      <span>
+        <h3 id="titulo" class="text-center">
+            Acerca de mí
+        </h3>
+        <p *ngIf="!editMode" class="aboutMe">
+          {{ acercaDe?.descripcion }}
+        </p>
+        <div *ngIf="editMode">
+          <textarea
+            type="text"
+            class="w-100"
+            [(ngModel)]="descripcion"
+            class="form-control form-control-sm"
+          ></textarea>
+        </div>
+      </span>
+    </div>
+  </div>
+ 
+</div>
+
+<!-- <div id="contenedor-acerca-de" >
+      <div id="foto-div">
+          <img class="img-fluid" [src]="profileUrl" alt="">
+        </div>
+  <div class="d-flex">
+    <div id="contenedor-nombre-titulo" class="w-100">
+   
+      <div>
+        <h2 *ngIf="!editMode" id="nombre" class="text-center">
+          {{ acercaDe?.nombre }} {{ acercaDe?.apellido }}
+        </h2>
+        <div *ngIf="editMode" class="d-flex">
+          <input type="text" class="w-100" [(ngModel)]="nombre" class="form-control form-control-sm">
+          <input type="text" class="w-100" [(ngModel)]="apellido" class="form-control form-control-sm">
+        </div>
+        <p *ngIf="!editMode" class="text-center">{{ acercaDe?.titulo }}</p>
+        <p *ngIf="editMode"> 
+          <input type="text" class="w-100" [(ngModel)]="titulo" class="form-control form-control-sm">
+        </p>
+      </div>
+    </div>
+    <div>
+      <button *ngIf="isLoggedIn && !editMode" type="button" class="btn btn-outline-dark" (click)="toggleEdit()">
+        <i class="bi bi-pencil-fill"></i>
+      </button>
+      <button *ngIf="isLoggedIn && editMode" type="button" class="btn btn-outline-dark" (click)="save()">
+        <i class="bi bi-save-fill"></i>
+      </button>
+      <button *ngIf="isLoggedIn && editMode" type="button" class="btn btn-danger" (click)="cancel()">
+        <i class="bi bi-x-square-fill"></i>
+      </button>
+    </div>
+  </div>
+ 
+
+  <div>
+    <span>
+      <h3 id="titulo" class="text-center">Acerca de mí</h3>
+      <p *ngIf="!editMode" class="text-center">
+        {{ acercaDe?.descripcion }}
+      </p>
+      <div *ngIf="editMode">
+        <textarea type="text" class="w-100" [(ngModel)]="descripcion" class="form-control form-control-sm"></textarea>
+      </div>
+    </span>
+  </div>
+</div> -->

@@ -6,9 +6,9 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LogoArgprogComponent } from './components/header/logo-argprog/logo-argprog.component';
 import { RedsocIconsComponent } from './components/header/redsoc-icons/redsoc-icons.component';
-import { BannerComponent } from './components/banner/banner.component';
+import { BannerComponent } from './components/profile/banner/banner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
+import { AcercaDeComponent } from './components/profile/acerca-de/acerca-de.component';
 
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
@@ -26,11 +26,12 @@ import { EducacionCrearComponent } from './components/educacion/educacion-crear/
 
 import { ProyectosRealizadosCrearComponent } from './components/proyectos-realizados/proyectos-realizados-crear/proyectos-realizados-crear.component';
 import { SkillsCrearComponent } from './components/skills/skills-crear/skills-crear.component';
-import { BannerEditComponent } from './components/banner/banner-edit/banner-edit.component';
+import { BannerEditComponent } from './components/profile/banner/banner-edit/banner-edit.component';
 import { EducacionItemComponent } from './components/educacion/educacion-item/educacion-item.component';
 import { ExperienciaItemComponent } from './components/experiencia/experiencia-item/experiencia-item.component';
 import { ProyectosRealizadosItemComponent } from './components/proyectos-realizados/proyectos-realizados-item/proyectos-realizados-item.component';
 import { SkillsItemComponent } from './components/skills/skills-item/skills-item.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { SkillsItemComponent } from './components/skills/skills-item/skills-item
     EducacionItemComponent,
     ExperienciaItemComponent,
     ProyectosRealizadosItemComponent,
-    SkillsItemComponent
+    SkillsItemComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

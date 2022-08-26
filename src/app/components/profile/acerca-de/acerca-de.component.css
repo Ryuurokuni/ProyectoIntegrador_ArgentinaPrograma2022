@@ -1,0 +1,117 @@
+
+/* .row{
+  padding: 20px;
+}  */
+
+span{
+  margin: 0;
+}
+
+p{
+  margin: 0;
+}
+
+#titulo{
+  font-weight: bold;
+}
+
+/* #contenedor-nombre-titulo{
+  background-color: #fcf7de;
+} */
+
+#nombre{
+ 
+  font-weight: bold;
+}
+
+p{
+
+  font-weight: 400;
+}
+
+
+textarea{
+  height: 180px;
+  resize: none;
+}
+
+#foto-div{
+  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top: 0;
+ 
+  /* background-color: green; */
+  
+}
+
+img#profile-pic {
+  /* position: absolute; */
+  transform: translateY(-4rem) scale(1.7, 1.7);
+  width: 140px;
+  align-self: center;
+
+  border-radius: 50%;
+ 
+  margin: 0 auto;
+  box-shadow: 1px 4px 5px #2222226b
+}
+.profile-col{
+
+
+  /* background-color: red; */
+  /* padding-top: 10rem; */
+}
+.about-col{
+  /* background-color: red; */
+  padding: 1rem; 
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 16rem auto;
+  background-color: whitesmoke;
+  /* border: solid 1px #ccc; */
+  border: solid 1px #ccc;
+}
+
+#contenedor-acerca-de{
+  margin-bottom: 2rem;
+  position: relative
+  
+  
+}
+.actions-container{
+  position: absolute;
+  gap: 0.2rem;
+  display: flex;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+}
+
+.aboutMe{
+  text-align: center;
+}
+
+.name-edit-container{
+  padding: 0 1rem;
+}
+
+
+@media (min-width: 750px) {
+  .grid-container{
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 16rem;
+  }
+  .aboutMe{
+    text-align: left;
+  }
+  .name-edit-container{
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+}
+
