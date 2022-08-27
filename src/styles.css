@@ -47,6 +47,11 @@ html, body {
   border-color: rgb(39, 39, 39);
 }
 
+.boton-submit:active{
+  background-color: rgb(39, 39, 39);
+  border-color: rgb(39, 39, 39);
+}
+
 .modal-edit-header{
   background-color: #ce956c;
 }

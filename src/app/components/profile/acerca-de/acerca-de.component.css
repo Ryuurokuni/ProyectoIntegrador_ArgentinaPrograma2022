@@ -104,7 +104,7 @@ img#profile-pic {
   top: 0;
   right: 0;
   padding: 1rem;
-  z-index: 1999999999999999;
+  z-index: 2;
 }
 
 .aboutMe{
