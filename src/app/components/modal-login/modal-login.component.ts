@@ -51,7 +51,7 @@ export class ModalLoginComponent implements OnInit {
         this.isLogginFail = true;
         this.errMsj = err.error.mensaje;
         console.log(this.errMsj);
-        
+        window.alert("Credenciales incorrectas, revise los datos ingresados.")
       })
   }
 

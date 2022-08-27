@@ -9,15 +9,15 @@
           <form (ngSubmit)="saveChanges()" novalidate #f="ngForm">
             <div class="">
               <div class="form-group">
-                  <label for="nombre">Nombre del Idioma</label>
+                  <label for="nombre">Nombre del Idioma:</label>
                   <input type="text" class="form-control form-control-md" id="nombre" name="nombre" [(ngModel)]="nombre" required>
               </div>
               <div class="form-group">
-                <label for="nombreReal">Nombre del Idioma (en el Idioma original)</label>
+                <label for="nombreReal">Nombre del Idioma (en el lenguaje original):</label>
                 <input type="text" class="form-control form-control-md" id="nombreReal" name="nombreReal" [(ngModel)]="nombreReal" required>
             </div>
               <div class="form-group">
-                  <label for="porcentaje">Porcentaje de maestría</label>
+                  <label for="porcentaje">Porcentaje de maestría:</label>
                   <input type="text" class="form-control form-control-md" id="porcentaje" name="porcentaje" [(ngModel)]="porcentaje" required>
               </div>
               <br>

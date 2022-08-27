@@ -60,6 +60,8 @@ export class AcercaDeComponent implements OnInit {
           // this.imagenesGuardadas.emit(true);
           // alert("Ta bien");
           window.location.reload();
+        }, err =>{
+          window.alert("Una de las imágenes seleccionadas excede el límite permitido. Comprima la imagen en cuestión o seleccione una imágen alternativa.")
         });
    
   }
