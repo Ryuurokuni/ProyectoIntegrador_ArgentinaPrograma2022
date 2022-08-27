@@ -41,6 +41,7 @@ public class EducacionController {
         }
         
         Educacion educacion = servEdu.getOne(id).get();
+        
         return new ResponseEntity(educacion, HttpStatus.OK);
     }
     
@@ -50,7 +51,9 @@ public class EducacionController {
         if(!servEdu.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el id solicitado..."), HttpStatus.NOT_FOUND);
         }
+        
         servEdu.delete(id);
+        
         return new ResponseEntity(new Mensaje("Entrada de educación eliminada exitosamente!"), HttpStatus.OK);
     }
     
@@ -70,7 +73,9 @@ public class EducacionController {
                 dtoeducacion.getFechaDesde(),
                 dtoeducacion.getFechaHasta()
             );
+        
         servEdu.save(educacion);
+        
         return new ResponseEntity(new Mensaje("Educacion creada exitosamente!"), HttpStatus.OK);
                 
     }

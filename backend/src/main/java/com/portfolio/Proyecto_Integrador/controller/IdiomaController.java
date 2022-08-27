@@ -41,6 +41,7 @@ public class IdiomaController {
         }
         
         Idioma idioma = servIdioma.getOne(id).get();
+        
         return new ResponseEntity(idioma, HttpStatus.OK);
     }
     
@@ -50,7 +51,9 @@ public class IdiomaController {
         if(!servIdioma.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el id solicitado..."), HttpStatus.NOT_FOUND);
         }
+        
         servIdioma.delete(id);
+        
         return new ResponseEntity(new Mensaje("Entrada de idioma eliminada exitosamente!"), HttpStatus.OK);
     }
     
@@ -70,7 +73,9 @@ public class IdiomaController {
                 dtoidioma.getPorcentaje()
                 
             );
+        
         servIdioma.save(idioma);
+        
         return new ResponseEntity(new Mensaje("Idioma creado exitosamente!"), HttpStatus.OK);
                 
     }

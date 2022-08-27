@@ -48,7 +48,9 @@ public class ExperienciaLaboralController {
         if (!servExp.existsById(id)) {
             return new ResponseEntity(new Mensaje("No existe la entrada solicitada..."), HttpStatus.NOT_FOUND);
         }
+        
         servExp.delete(id);
+        
         return new ResponseEntity(new Mensaje("Entrada eliminada exitosamente!"), HttpStatus.OK);
     }
 
@@ -66,6 +68,7 @@ public class ExperienciaLaboralController {
                 dtoexp.getFechaDesde(),
                 dtoexp.getFechaHasta()
         );
+        
         servExp.save(experiencia);
         
         return new ResponseEntity(new Mensaje("Entrada creada exitosamente!"), HttpStatus.OK);

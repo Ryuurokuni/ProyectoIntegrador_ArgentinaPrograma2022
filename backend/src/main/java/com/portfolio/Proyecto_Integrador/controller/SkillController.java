@@ -40,6 +40,7 @@ public class SkillController {
         }
         
         Skill skill = servSkill.getOne(id).get();
+        
         return new ResponseEntity(skill, HttpStatus.OK);
     }
     
@@ -49,7 +50,9 @@ public class SkillController {
         if(!servSkill.existsById(id)){
             return new ResponseEntity(new Mensaje("No existe el id solicitado..."), HttpStatus.NOT_FOUND);
         }
+        
         servSkill.delete(id);
+        
         return new ResponseEntity(new Mensaje("Entrada de skill eliminada exitosamente!"), HttpStatus.OK);
     }
     
@@ -67,7 +70,9 @@ public class SkillController {
                 dtoskill.getNombre(),
                 dtoskill.getPorcentaje()
             );
+        
         servSkill.save(skill);
+        
         return new ResponseEntity(new Mensaje("Skill creada exitosamente!"), HttpStatus.OK);
                 
     }

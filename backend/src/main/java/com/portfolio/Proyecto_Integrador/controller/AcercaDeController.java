@@ -24,7 +24,7 @@ public class AcercaDeController {
     
     @Autowired
     AcercaDeService servAcercaDe;
-    
+    // Acerca De no acepta carga de datos o eliminación, solo edición porque hay un solo id válido en el que se edita.
     @GetMapping()
     public ResponseEntity<AcercaDe>getAcercaDe(){
 
