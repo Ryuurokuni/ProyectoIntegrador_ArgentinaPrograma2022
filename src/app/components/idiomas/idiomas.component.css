@@ -15,8 +15,12 @@ ul{
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
+
+/* .alinea{
+  align-items: center;
+} */
 
 @media (min-width: 750px) {
   ul{
@@ -30,4 +34,6 @@ ul{
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* color anterior del interior #946b4d */
 
