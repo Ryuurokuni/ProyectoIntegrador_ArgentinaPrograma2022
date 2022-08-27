@@ -28,18 +28,18 @@
   <div *ngIf="isLoggedIn">
     <div class="d-flex gap-1" *ngIf="!editMode">
       <button type="button" class="btn btn-outline-dark" (click)="ToggleEdit()">
-        <i class="bi bi-pencil-fill"></i>
+        <fa-icon [icon]="['fas','pencil']"></fa-icon>
       </button>
       <button type="button" class="btn btn-danger" (click)="delete()">
-        <i class="bi bi-trash-fill"></i>
+        <fa-icon [icon]="['fas','trash']"></fa-icon>
       </button>
     </div>
     <div class="d-flex gap-1 flex-column justify-content-center h-100" *ngIf="editMode">
       <button type="button" class="btn btn-outline-dark" (click)="saveChanges()">
-        <i class="bi bi-save-fill"></i>
+        <fa-icon [icon]="['fas','check']"></fa-icon>
       </button>
       <button type="button" class="btn btn-danger" (click)="cancel()">
-        <i class="bi bi-x-square-fill"></i>
+        <fa-icon [icon]="['fas','ban']"></fa-icon>
       </button>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { AcercaDe } from 'src/app/model/acerca-de';
@@ -37,6 +38,8 @@ export class AcercaDeComponent implements OnInit {
   readonly profileUrl = this.bservice.profileUrl;
 
   constructor(private acercaDeService: AcercaDeService,public modal: NgbModal,  private authService: AuthService, private bservice: BannerService) { }
+
+
 
   ngOnInit(): void {
    

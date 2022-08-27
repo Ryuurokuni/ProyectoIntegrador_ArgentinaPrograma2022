@@ -80,12 +80,7 @@ img#profile-pic {
   margin: 0 auto;
   box-shadow: 1px 4px 5px #2222226b
 }
-.profile-col{
 
-
-  /* background-color: red; */
-  /* padding-top: 10rem; */
-}
 .about-col{
   /* background-color: red; */
   padding: 1rem; 
@@ -94,9 +89,11 @@ img#profile-pic {
 
 
 #contenedor-acerca-de{
-  margin-bottom: 2rem;
+  margin-bottom: 1.7rem;
   position: relative;
-  box-shadow: 1px 4px 5px #2222226b;
+  padding-bottom: 1rem;
+  border: solid 1px #ccc;
+  background-color: whitesmoke;
   
   
 }
@@ -107,6 +104,7 @@ img#profile-pic {
   top: 0;
   right: 0;
   padding: 1rem;
+  z-index: 1999999999999999;
 }
 
 .aboutMe{
@@ -123,7 +121,9 @@ img#profile-pic {
   grid-template-rows: auto auto;
   background-color: whitesmoke;
   /* border: solid 1px #ccc; */
-  border: solid 1px #ccc;
+  /* border: solid 1px #ccc; */
+  /* border-bottom-style: none; */
+
 }
 
 @media (min-width: 750px) {
@@ -138,5 +138,9 @@ img#profile-pic {
     padding-left: 1rem;
     padding-right: 0;
   }
+
+  /* @media (min-width:750) and (max-width:987){
+
+  } */
 }
 

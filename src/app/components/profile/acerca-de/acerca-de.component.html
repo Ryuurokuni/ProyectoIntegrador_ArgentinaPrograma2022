@@ -1,13 +1,13 @@
 <div id="contenedor-acerca-de">
   <div class="actions-container">
     <button *ngIf="isLoggedIn && !editMode" type="button" class="btn btn-outline-dark" (click)="toggleEdit()">
-      <i class="bi bi-pencil-fill"></i>
+      <fa-icon [icon]="['fas','pencil']"></fa-icon>
     </button>
     <button *ngIf="isLoggedIn && editMode" type="button" class="btn btn-outline-dark" (click)="save()">
-      <i class="bi bi-save-fill"></i>
+      <fa-icon [icon]="['fas','check']"></fa-icon>
     </button>
     <button *ngIf="isLoggedIn && editMode" type="button" class="btn btn-danger" (click)="cancel()">
-      <i class="bi bi-x-square-fill"></i>
+      <fa-icon [icon]="['fas','ban']"></fa-icon>
     </button>
   </div>
   <div class="grid-container">

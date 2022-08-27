@@ -3,3 +3,7 @@ footer{
   flex-direction: column;
   text-align: center;
 }
+
+p{
+  margin-bottom: 0.1rem;
+}

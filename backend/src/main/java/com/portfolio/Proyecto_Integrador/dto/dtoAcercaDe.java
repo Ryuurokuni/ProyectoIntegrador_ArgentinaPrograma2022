@@ -1,5 +1,6 @@
 package com.portfolio.Proyecto_Integrador.dto;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 
 
@@ -11,6 +12,7 @@ public class DTOAcercaDe {
     private String apellido;
     @NotBlank
     private String titulo;
+    @Column(length = 680)
     @NotBlank
     private String descripcion;
 

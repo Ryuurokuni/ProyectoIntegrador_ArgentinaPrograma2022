@@ -34,6 +34,14 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { IdiomasComponent } from './components/idiomas/idiomas.component';
 import { IdiomasCrearComponent } from './components/idiomas/idiomas-crear/idiomas-crear.component';
 
+import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSave, faPencil, faTrash, faCancel, faBan, faCheck, faTimes, faPlus } from '@fortawesome/free-solid-svg-icons';
+
+const WhiteListedIcons = [
+  faSave, faPencil, faTrash, faBan, faCheck, faCancel, faTimes, faPlus
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,12 +77,18 @@ import { IdiomasCrearComponent } from './components/idiomas/idiomas-crear/idioma
     NgbModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
-    FormsModule
-    
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [
     interceptorProvider
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(library: FaIconLibrary) {
+    // Add an icon to the library for convenient access in other components
+    library.addIcons(...WhiteListedIcons);
+  }
+ }
