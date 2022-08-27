@@ -20,11 +20,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ModalLoginComponent } from './components/modal-login/modal-login.component';
 import { interceptorProvider } from './service/interceptor-service';
-import { ExperienciaCrearComponent } from './components/experiencia/experiencia-crear/experiencia-crear.component';
-import { ExperienciaEditarComponent } from './components/experiencia/experiencia-editar/experiencia-editar.component';
-import { EducacionCrearComponent } from './components/educacion/educacion-crear/educacion-crear.component';
 
-import { ProyectosRealizadosCrearComponent } from './components/proyectos-realizados/proyectos-realizados-crear/proyectos-realizados-crear.component';
 import { SkillsCrearComponent } from './components/skills/skills-crear/skills-crear.component';
 import { BannerEditComponent } from './components/profile/banner/banner-edit/banner-edit.component';
 import { EducacionItemComponent } from './components/educacion/educacion-item/educacion-item.component';
@@ -57,11 +53,7 @@ const WhiteListedIcons = [
     ProyectosRealizadosComponent,
     FooterComponent,
     ModalLoginComponent,
-    ExperienciaCrearComponent,
-    ExperienciaEditarComponent,
-    EducacionCrearComponent,
 
-    ProyectosRealizadosCrearComponent,
     SkillsCrearComponent,
     BannerEditComponent,
     EducacionItemComponent,
