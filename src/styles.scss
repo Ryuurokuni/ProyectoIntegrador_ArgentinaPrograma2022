@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
 
+@import 'variables.scss';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
 /* *{
   box-sizing: border-box;
   margin: 0;
@@ -43,12 +46,12 @@ html, body {
 }
 
 .boton-submit:hover{
-  background-color: rgb(39, 39, 39);
+  background-color:  hsl(25, 35%, 53%);
   border-color: rgb(39, 39, 39);
 }
 
 .boton-submit:active{
-  background-color: rgb(39, 39, 39);
+  background-color: hsl(25, 35%, 53%);
   border-color: rgb(39, 39, 39);
 }
 

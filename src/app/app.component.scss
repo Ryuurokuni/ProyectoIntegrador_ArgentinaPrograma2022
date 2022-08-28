@@ -1,0 +1,40 @@
+/* .container-fluid{
+  padding: 0px;
+} */
+
+$bg: #e4e4e4;
+
+$primary: #191516;
+$secondary: #007ea7;
+$error: #ab2346;
+$success: #00b295;
+$warn: #fffc31;
+$info: #08605f;
+$light: #f8f1ff;
+
+$theme-colors: (
+    primary: $primary,
+    secondary: $secondary,
+    dark: $primary,
+    success: $success,
+    danger: $error,
+    warning: $warn,
+    info: $info,
+    light: $light,
+);
+
+    // "node_modules/bootstrap/dist/css/bootstrap.min.css",
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+main{
+  width: 100%;
+  margin: 0 auto;
+  transition: all 100ms ease-in;
+  /* background-color: cadetblue; */
+}
+
+@media (min-width: 1000px) {
+  main{
+    width: 1000px;
+  }
+}
