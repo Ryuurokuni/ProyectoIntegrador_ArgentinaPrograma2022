@@ -34,9 +34,6 @@ export class IdiomasComponent implements OnInit {
         this.sIdioma.fetchData();
       },
     });
+    }
   }
-
-
-  }
-
 }

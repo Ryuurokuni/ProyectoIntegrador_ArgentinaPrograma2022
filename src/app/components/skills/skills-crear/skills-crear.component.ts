@@ -28,7 +28,6 @@ export class SkillsCrearComponent implements OnInit {
     this.modal.open(contenido,{size:'md', centered:true});
   }
 
-
   saveChanges() {
     var skill: Skill = {
       id: 0,

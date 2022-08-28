@@ -1,7 +1,6 @@
 <div class="prim">
   <h2 id="titulo">Experiencia Laboral
     <button *ngIf="isLoggedIn && !anyInserting" type="button" class="btn btn-outline-dark" (click)="CreateNew()"><fa-icon [icon]="['fas','plus']"></fa-icon></button>
-
   </h2>
   <div class="col-lg-10"></div>
 
@@ -12,27 +11,4 @@
       </li>
     </ul>
   </div>
-
-
 </div>
-
-<!-- <div class="row">
-  <h2 id="titulo">Experiencia laboral</h2>
-  <div class="col-lg-2">
-    <app-experiencia-crear *ngIf="isLogged"></app-experiencia-crear>
-  </div>
-  <div class="col-lg-10"></div>
-  <div class="col-lg-1"></div>
-  <div class="col-lg-11">
-  <table class="table">
-    <tbody>
-      <tr *ngFor="let ExperienciaLaboral of exp">
-        <td><h3>{{ExperienciaLaboral.nombreExp}}</h3></td>
-        <td>{{ExperienciaLaboral.descripcionExp}}</td>
-        <td *ngIf="isLogged"><app-experiencia-editar></app-experiencia-editar></td>
-        <td *ngIf="isLogged"><button type="button" class="btn btn-danger" (click)="delete(ExperienciaLaboral.id)"><i class="bi bi-trash-fill"></i> ELIMINAR</button></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</div> -->

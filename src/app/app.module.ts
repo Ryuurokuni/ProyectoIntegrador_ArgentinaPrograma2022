@@ -4,8 +4,6 @@ import { FormsModule }   from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { LogoArgprogComponent } from './components/header/logo-argprog/logo-argprog.component';
-import { RedsocIconsComponent } from './components/header/redsoc-icons/redsoc-icons.component';
 import { BannerComponent } from './components/profile/banner/banner.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AcercaDeComponent } from './components/profile/acerca-de/acerca-de.component';
@@ -22,7 +20,6 @@ import { ModalLoginComponent } from './components/modal-login/modal-login.compon
 import { interceptorProvider } from './service/interceptor-service';
 
 import { SkillsCrearComponent } from './components/skills/skills-crear/skills-crear.component';
-import { BannerEditComponent } from './components/profile/banner/banner-edit/banner-edit.component';
 import { EducacionItemComponent } from './components/educacion/educacion-item/educacion-item.component';
 import { ExperienciaItemComponent } from './components/experiencia/experiencia-item/experiencia-item.component';
 import { ProyectosRealizadosItemComponent } from './components/proyectos-realizados/proyectos-realizados-item/proyectos-realizados-item.component';
@@ -42,8 +39,6 @@ const WhiteListedIcons = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    LogoArgprogComponent,
-    RedsocIconsComponent,
     BannerComponent,
     AcercaDeComponent,
 
@@ -55,7 +50,6 @@ const WhiteListedIcons = [
     ModalLoginComponent,
 
     SkillsCrearComponent,
-    BannerEditComponent,
     EducacionItemComponent,
     ExperienciaItemComponent,
     ProyectosRealizadosItemComponent,

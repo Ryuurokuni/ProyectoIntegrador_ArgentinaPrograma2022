@@ -39,8 +39,6 @@ export class AcercaDeComponent implements OnInit {
 
   constructor(private acercaDeService: AcercaDeService,public modal: NgbModal,  private authService: AuthService, private bservice: BannerService) { }
 
-
-
   ngOnInit(): void {
    
   }
@@ -66,8 +64,6 @@ export class AcercaDeComponent implements OnInit {
    
   }
 
-
-
   bannerChange(e: any){
     this.fileBanner = e.target.files![0];
 
@@ -75,7 +71,6 @@ export class AcercaDeComponent implements OnInit {
   profileChange(e: any){
     this.fileProfile = e.target.files![0];
   }
-
 
   toggleEdit(){
     this.editMode = true;

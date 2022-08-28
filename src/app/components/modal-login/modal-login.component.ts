@@ -13,6 +13,7 @@ export class ModalLoginComponent implements OnInit {
 
   isLogged = false;
   isLogginFail = false;
+  
   loginUsuario!: LoginUsuario;
   nombreUsuario!: string;
   password! : string;

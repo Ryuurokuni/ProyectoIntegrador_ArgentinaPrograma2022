@@ -27,12 +27,6 @@ export class ExperienciaComponent implements OnInit {
     this.sExperiencia.fetchData();
   }
 
-  delete(id?: number){
-
-  }
-
-
-
   CreateNew(){
     this.sExperiencia.apendToArray({
       id: 0,

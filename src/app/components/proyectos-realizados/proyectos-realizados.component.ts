@@ -27,12 +27,6 @@ export class ProyectosRealizadosComponent implements OnInit {
     this.sProyecto.fetchData();
   }
 
-  delete(id?: number){
-
-  }
-
-
-
   CreateNew(){
     this.sProyecto.apendToArray({
       id: 0,

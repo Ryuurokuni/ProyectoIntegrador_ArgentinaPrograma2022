@@ -28,7 +28,6 @@ export class IdiomasCrearComponent implements OnInit {
     this.modal.open(contenido,{size:'md', centered:true});
   }
 
-
   saveChanges() {
     var idioma: Idioma = {
       id: 0,

@@ -52,10 +52,9 @@ export class ProyectosRealizadosItemComponent implements OnInit {
         this.sProyecto.fetchData();
       },
     });
+    }
   }
 
-
-  }
   saveChanges() {
     var proyecto: Proyecto = {
       id: this.item.id,
@@ -80,6 +79,7 @@ export class ProyectosRealizadosItemComponent implements OnInit {
       });
     }
   }
+
   cancel() {
     this.setInitialValues();
     this.editMode = false;
@@ -89,5 +89,4 @@ export class ProyectosRealizadosItemComponent implements OnInit {
   public ToggleEdit() {
     this.editMode = true;
   }
-
 }

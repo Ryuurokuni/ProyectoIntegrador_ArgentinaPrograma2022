@@ -9,10 +9,10 @@ import { EducacionService } from 'src/app/service/educacion.service';
   styleUrls: ['./educacion-item.component.css'],
 })
 export class EducacionItemComponent implements OnInit {
+ 
   @Input() item!: Educacion;
   @Input() isLast!: boolean;
   
-
   public get isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
   }
@@ -49,14 +49,12 @@ export class EducacionItemComponent implements OnInit {
     if (window.confirm("Realmente quiere eliminar esta entrada?")) {
     this.eduService.delete(this.item.id).subscribe({
       next: (x) => {
-        
         this.eduService.fetchData();
       },
     });
   }
-
-
   }
+
   saveChanges() {
     var edu: Educacion = {
       id: this.item.id,
@@ -81,6 +79,7 @@ export class EducacionItemComponent implements OnInit {
       });
     }
   }
+  
   cancel() {
     this.setInitialValues();
     this.editMode = false;

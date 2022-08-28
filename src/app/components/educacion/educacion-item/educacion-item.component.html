@@ -1,5 +1,4 @@
 <div  [ngClass]="['d-flex w-100 listItem my-2', isLast ? '': 'bordecito']">
-  <!-- item.fechaDesde | date:'mm-yyyy' } -->
   <small *ngIf="!editMode" class="p-2 flex-shrink-0">{{ item.fechaDesde | date:"MM-yyyy" }} a {{ item.fechaHasta | date:"MM-yyyy" }}</small>
   <small *ngIf="editMode" class="px-2"> 
     <label for="" class="">Desde:</label>

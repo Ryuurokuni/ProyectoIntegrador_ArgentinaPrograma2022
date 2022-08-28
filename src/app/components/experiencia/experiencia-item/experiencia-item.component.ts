@@ -13,7 +13,6 @@ export class ExperienciaItemComponent implements OnInit {
   @Input() item!: ExperienciaLaboral;
   @Input() isLast!: boolean;
   
-
   public get isLoggedIn(): boolean {
     return this.authService.isLoggedIn;
   }
@@ -54,10 +53,8 @@ export class ExperienciaItemComponent implements OnInit {
         },
       });
     }
-    
-
-
   }
+
   saveChanges() {
     var exp: ExperienciaLaboral = {
       id: this.item.id,
@@ -82,6 +79,7 @@ export class ExperienciaItemComponent implements OnInit {
       });
     }
   }
+  
   cancel() {
     this.setInitialValues();
     this.editMode = false;

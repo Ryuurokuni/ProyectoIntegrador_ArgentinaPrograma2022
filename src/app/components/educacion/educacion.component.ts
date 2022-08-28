@@ -27,12 +27,6 @@ export class EducacionComponent implements OnInit {
     this.educacionS.fetchData();
   }
 
-  delete(id?: number){
-
-  }
-
-
-
   CreateNew(){
     this.educacionS.apendToArray({
       id: 0,
