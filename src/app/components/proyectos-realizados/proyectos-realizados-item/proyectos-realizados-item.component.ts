@@ -45,7 +45,7 @@ export class ProyectosRealizadosItemComponent implements OnInit {
   }
 
   delete() {
-    if (window.confirm("Realmente quiere eliminar esta entrada?")) {
+    if (window.confirm("¿Realmente quiere eliminar esta entrada?")) {
     this.sProyecto.delete(this.item.id).subscribe({
       next: (x) => {
         

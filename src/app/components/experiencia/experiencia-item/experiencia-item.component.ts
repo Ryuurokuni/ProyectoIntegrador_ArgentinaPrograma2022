@@ -46,7 +46,7 @@ export class ExperienciaItemComponent implements OnInit {
   }
 
   delete() {
-    if (window.confirm("Realmente quiere eliminar esta entrada?")) {
+    if (window.confirm("¿Realmente quiere eliminar esta entrada?")) {
       this.expService.delete(this.item.id).subscribe({
         next: (x) => {
           this.expService.fetchData();

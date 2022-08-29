@@ -29,7 +29,7 @@ export class SkillsComponent implements OnInit {
   }
 
   delete(id?: number) {
-    if (window.confirm("Realmente quiere eliminar esta entrada?")) {
+    if (window.confirm("¿Realmente quiere eliminar esta entrada?")) {
     this.sSkill.delete(id).subscribe({
       next: (x) => {
         this.sSkill.fetchData();

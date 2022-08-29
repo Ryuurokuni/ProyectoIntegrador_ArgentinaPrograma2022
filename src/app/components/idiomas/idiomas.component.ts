@@ -28,7 +28,7 @@ export class IdiomasComponent implements OnInit {
   }
 
   delete(id?: number) {
-    if (window.confirm("Realmente quiere eliminar esta entrada?")) {
+    if (window.confirm("¿Realmente quiere eliminar esta entrada?")) {
     this.sIdioma.delete(id).subscribe({
       next: (x) => {
         this.sIdioma.fetchData();
