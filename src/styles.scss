@@ -1,15 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
 
 @import 'variables.scss';
 @import '../node_modules/bootstrap/scss/bootstrap';
-
-/* *{
-  box-sizing: border-box;
-  margin: 0;
-} */
-
 
 html, body {
   font-family: 'Lato', sans-serif;
@@ -17,13 +10,9 @@ html, body {
   /* background-color: whitesmoke; */
 }
 
-/* main{
-  background-color: white;
-} */
 
 
 .primario {
-  /* background-color: aquamarine; */
   /* background-color:  #c76c3f; */
   /* background-color: #bd9476; */
   background-color: #ce956c;
@@ -62,17 +51,3 @@ html, body {
 .modal-edit-body{
   background-color: whitesmoke;
 }
-
-/* .modal-header{
-  border-width: 1px;
-  border-color: #ce956c;
-  border-bottom-style: none;
-} */
-
-/* .modal-content{
-  border-width: 1px;
-  border-color: whitesmoke;
-  border-bottom-left-radius: 0;
-  box-shadow: 1px 4px 5px #2222226b;
-  border-radius: 10px;
-} */
